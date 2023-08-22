@@ -55,4 +55,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\Inter-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-Regular.ttf" />
+	</ItemGroup>
 </Project>

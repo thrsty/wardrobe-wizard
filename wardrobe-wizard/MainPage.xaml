@@ -12,6 +12,7 @@
             
             <Label
                 Text="Good Morning!"
+                FontFamily="Inter"
                 FontAttributes="Bold"
                 TextColor="#F9F6EE"
                 SemanticProperties.HeadingLevel="Level1"
@@ -23,13 +24,13 @@
                 <Image
                     Source="cloud.png"
                     SemanticProperties.Description="cloud for tha weather"
-                    
                     HeightRequest="50"
                     HorizontalOptions="Start" />
             </Border>
 
             <Label
                 Text="20° and {condition}"
+                FontFamily="Inter"
                 FontAttributes="Bold"
                 TextColor="#F9F6EE"
                 SemanticProperties.HeadingLevel="Level2"
