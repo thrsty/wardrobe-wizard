@@ -5,26 +5,25 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            Spacing="20"
+            Padding="20,18"
+            VerticalOptions="Start">
+            
             <Label
-                Text="ed has changed it from a different branch"
+                Text="Good Morning!"
+                FontFamily="Inter"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
-                HorizontalOptions="Center" />
+                Padding="5"
+                HorizontalOptions="Start" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="20° and {condition}"
+                FontFamily="Inter"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="current weather state"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
