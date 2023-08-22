@@ -12,7 +12,7 @@
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
         </Tab>
 
-        <Tab Icon="new.png" Title="New Fit">
+        <Tab Icon="plusfit.png" Title="New Fit">
             <ShellContent ContentTemplate="{DataTemplate local:NewOutfit}" Route="NewOutfit" />
         </Tab>
 

@@ -64,13 +64,14 @@
 	  <None Remove="Resources\Images\outfit.svg" />
 	  <None Remove="Resources\Images\new.svg" />
 	  <None Remove="Resources\Images\home.svg" />
+	  <None Remove="Resources\Images\plusfit.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
 	  <BundleResource Include="Resources\Fonts\Inter-Regular.ttf" />
 	  <BundleResource Include="Resources\Images\outfit.svg" />
 	  <BundleResource Include="Resources\Images\outfit.svg" />
-	  <BundleResource Include="Resources\Images\new.svg" />
 	  <BundleResource Include="Resources\Images\home.svg" />
+	  <BundleResource Include="Resources\Images\plusfit.svg" />
 	</ItemGroup>
 </Project>
