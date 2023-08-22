@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wardrobe_wizard.MainPage"
-             BackgroundColor="#291732">
+             x:Class="wardrobe_wizard.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
@@ -14,25 +13,15 @@
                 Text="Good Morning!"
                 FontFamily="Inter"
                 FontAttributes="Bold"
-                TextColor="#F9F6EE"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 Padding="5"
                 HorizontalOptions="Start" />
 
-            <Border StrokeThickness="2">
-                <Image
-                    Source="cloud.png"
-                    SemanticProperties.Description="cloud for tha weather"
-                    HeightRequest="50"
-                    HorizontalOptions="Start" />
-            </Border>
-
             <Label
                 Text="20° and {condition}"
                 FontFamily="Inter"
                 FontAttributes="Bold"
-                TextColor="#F9F6EE"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="current weather state"
                 FontSize="18"

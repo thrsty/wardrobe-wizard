@@ -42,7 +42,8 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<MauiImage Update="Resources\Images\wardrobe.svg" BaseSize="40,40" Padding="10" />
+		<MauiImage Update="Resources\Images\house.svg" BaseSize="40,40" Padding="10" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -58,9 +59,18 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Inter-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
+	  <None Remove="Resources\Images\house.svg" />
+	  <None Remove="Resources\Images\wardrobe.svg" />
+	  <None Remove="Resources\Images\outfit.svg" />
+	  <None Remove="Resources\Images\new.svg" />
+	  <None Remove="Resources\Images\home.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
 	  <BundleResource Include="Resources\Fonts\Inter-Regular.ttf" />
+	  <BundleResource Include="Resources\Images\outfit.svg" />
+	  <BundleResource Include="Resources\Images\outfit.svg" />
+	  <BundleResource Include="Resources\Images\new.svg" />
+	  <BundleResource Include="Resources\Images\home.svg" />
 	</ItemGroup>
 </Project>
