@@ -8,23 +8,41 @@
             Spacing="20"
             Padding="20,18"
             VerticalOptions="Start">
-            
-            <Label
+
+             <Label
                 Text="Good Morning!"
-                FontFamily="Inter"
                 FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 Padding="5"
                 HorizontalOptions="Start" />
 
-            <Label
-                Text="20° and {condition}"
-                FontFamily="Inter"
+            <HorizontalStackLayout
+                Spacing="20"
+                HorizontalOptions="Start">
+
+                <Label
+                Text="temp° and condition"
                 FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="current weather state"
                 FontSize="18"
+                VerticalOptions="Center" />
+
+                <Image Source="cloud.png"
+                       MaximumWidthRequest="50"
+                       MaximumHeightRequest="50"/>
+
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="NewFitBtn"
+                Text="New fit"
+                FontFamily="InterSemiBold"
+                FontSize="32"
+                WidthRequest="400"
+                HeightRequest="80"
+                Clicked="OnNewFitClicked"
                 HorizontalOptions="Center" />
 
             <Button
