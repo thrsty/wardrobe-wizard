@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:wardrobe_wizard="clr-namespace:wardrobe_wizard"
+             x:DataType="wardrobe_wizard:MainPage"
              x:Class="wardrobe_wizard.MainPage">
 
     <ScrollView>
@@ -40,8 +41,6 @@
                 Text="New fit"
                 FontFamily="InterSemiBold"
                 FontSize="32"
-                WidthRequest="400"
-                HeightRequest="80"
                 Clicked="OnNewFitClicked"
                 HorizontalOptions="Center" />
 
@@ -56,4 +55,3 @@
     </ScrollView>
 
 </ContentPage>
-

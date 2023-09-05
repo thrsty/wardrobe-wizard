@@ -7,7 +7,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+    }
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
@@ -23,8 +23,10 @@ public partial class MainPage : ContentPage
 
 	private void OnNewFitClicked(object sender, EventArgs e)
 	{
+		NewFitBtn.MinimumWidthRequest = 500;
+        Console.WriteLine(DeviceDisplay.MainDisplayInfo.Width);
+        Console.WriteLine(GetValue(MainPage.MaximumWidthRequestProperty));
+        Console.WriteLine(NewFitBtn.Width);
 
-	}
+    }
 }
-
-
