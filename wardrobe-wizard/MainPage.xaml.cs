@@ -7,6 +7,8 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+
+        NewFitBtn.WidthRequest = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density - 20;
     }
 
 	private void OnCounterClicked(object sender, EventArgs e)
@@ -23,10 +25,8 @@ public partial class MainPage : ContentPage
 
 	private void OnNewFitClicked(object sender, EventArgs e)
 	{
-		NewFitBtn.MinimumWidthRequest = 500;
-        Console.WriteLine(DeviceDisplay.MainDisplayInfo.Width);
-        Console.WriteLine(GetValue(MainPage.MaximumWidthRequestProperty));
-        Console.WriteLine(NewFitBtn.Width);
-
+        NewFitBtn.WidthRequest = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density - 20;
+		Console.WriteLine(DeviceDisplay.MainDisplayInfo.Width);
+		Console.WriteLine(DeviceDisplay.MainDisplayInfo.Density);
     }
 }
