@@ -7,8 +7,9 @@
     <ScrollView>
         <VerticalStackLayout
             Spacing="20"
-            Padding="20,18"
-            VerticalOptions="Start">
+            Padding="20, 20"
+            VerticalOptions="Start"
+            HorizontalOptions="Start">
 
              <Label
                 Text="Good Morning!"
@@ -22,6 +23,21 @@
                 Spacing="20"
                 HorizontalOptions="Start">
 
+                <Border
+                    Padding="6"
+                    Background="{StaticResource Primary}"
+                    StrokeShape="RoundRectangle 8"
+                    HeightRequest="70"
+                    WidthRequest="70"
+                    StrokeThickness="0">
+
+                    <Image
+                        Source="cloud.png"
+                        MaximumWidthRequest="50"
+                        MaximumHeightRequest="50"/>
+
+                </Border>
+
                 <Label
                 Text="temp° and condition"
                 FontAttributes="Bold"
@@ -29,10 +45,6 @@
                 SemanticProperties.Description="current weather state"
                 FontSize="18"
                 VerticalOptions="Center" />
-
-                <Image Source="cloud.png"
-                       MaximumWidthRequest="50"
-                       MaximumHeightRequest="50"/>
 
             </HorizontalStackLayout>
 
@@ -43,14 +55,82 @@
                 FontSize="32"
                 Clicked="OnNewFitClicked"
                 HorizontalOptions="Center"
+                HeightRequest="80"
                 />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <VerticalStackLayout
+                Spacing="10"
+                VerticalOptions="Start"
+                HorizontalOptions="Start">
+
+                <Label
+                Text="Suggested outfits:"
+                FontFamily="InterSemiBold"
+                FontSize="20"
+                HorizontalTextAlignment="Start" />
+
+                <Border
+                    x:Name="Border1"
+                    Background="{StaticResource Primary}"
+                    HeightRequest="60"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="0"
+                    Padding="16">
+
+                    <HorizontalStackLayout
+                        >
+
+                        <Label
+                            Text="Name of fit 1"
+                            FontFamily="InterSemiBold"
+                            VerticalTextAlignment="Center"
+                            FontSize="16"
+                        />
+
+                        <Image
+                            Source="exampleFit.png"/>
+
+                    </HorizontalStackLayout>
+                    
+
+                </Border>
+
+                <Border
+                    x:Name="Border2"
+                    Background="{StaticResource Primary}"
+                    HeightRequest="60"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="0"
+                    Padding="16">
+                    
+                    <Label
+                        Text="Name of fit 1"
+                        FontFamily="InterSemiBold"
+                        VerticalTextAlignment="Center"
+                        FontSize="16"
+                        />
+                </Border>
+                    
+                <Border
+                    x:Name="Border3"
+                    Background="{StaticResource Primary}"
+                    HeightRequest="60"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="0"
+                    Padding="16">
+                    
+                    <Label
+                        Text="Name of fit 3"
+                        FontFamily="InterSemiBold"
+                        VerticalTextAlignment="Center"
+                        FontSize="16"
+                        />
+                </Border>
+
+
+            </VerticalStackLayout>
+
+
 
         </VerticalStackLayout>
     </ScrollView>

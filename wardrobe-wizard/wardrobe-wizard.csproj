@@ -66,6 +66,7 @@
 	  <None Remove="Resources\Images\home.svg" />
 	  <None Remove="Resources\Images\plusfit.svg" />
 	  <None Remove="Resources\Fonts\Inter-SemiBold.ttf" />
+	  <None Remove="Resources\Images\exampleFit.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
@@ -75,5 +76,6 @@
 	  <BundleResource Include="Resources\Images\home.svg" />
 	  <BundleResource Include="Resources\Images\plusfit.svg" />
 	  <BundleResource Include="Resources\Fonts\Inter-SemiBold.ttf" />
+	  <BundleResource Include="Resources\Images\exampleFit.svg" />
 	</ItemGroup>
 </Project>
