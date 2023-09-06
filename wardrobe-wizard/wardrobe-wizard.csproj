@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>wardrobe-wizard</ApplicationTitle>
+		<ApplicationTitle>wardrobe wizard</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.wardrobe_wizard</ApplicationId>
