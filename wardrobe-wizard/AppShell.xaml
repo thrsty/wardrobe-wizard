@@ -7,7 +7,7 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-
+        
         <Tab Icon="house.png" Title="Home">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
         </Tab>

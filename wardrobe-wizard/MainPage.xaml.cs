@@ -2,24 +2,19 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
-	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+		double fullscreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density - 40;
+		NewFitBtn.WidthRequest = fullscreenWidth;
+		Border1.WidthRequest = fullscreenWidth;
+        Border2.WidthRequest = fullscreenWidth;
+        Border3.WidthRequest = fullscreenWidth;
+    }
+
+	async private void OnNewFitClicked(object sender, EventArgs e)
 	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        await Shell.Current.GoToAsync("//NewOutfit");
+    }
 }
-
-
