@@ -5,6 +5,7 @@
              x:Class="wardrobe_wizard.MainPage">
 
     <ScrollView>
+
         <VerticalStackLayout
             Spacing="20"
             Padding="20, 20"
@@ -58,6 +59,7 @@
                 HeightRequest="80"
                 />
 
+            <!-- the suggested outfits -->
             <VerticalStackLayout
                 Spacing="10"
                 VerticalOptions="Start"
@@ -75,24 +77,31 @@
                     HeightRequest="60"
                     StrokeShape="RoundRectangle 8"
                     StrokeThickness="0"
-                    Padding="16">
+                    Padding="4">
 
-                    <HorizontalStackLayout
-                        >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
 
                         <Label
+                            Padding="12"
                             Text="Name of fit 1"
                             FontFamily="InterSemiBold"
                             VerticalTextAlignment="Center"
                             FontSize="16"
-                        />
+                            HorizontalOptions="Start"
+                            />
 
                         <Image
-                            Source="exampleFit.png"/>
+                            Source="examplefit.png"
+                            MaximumHeightRequest="52"
+                            MaximumWidthRequest="52"
+                            Grid.Column="1"/>
 
-                    </HorizontalStackLayout>
+                    </Grid>
                     
-
                 </Border>
 
                 <Border
@@ -101,14 +110,31 @@
                     HeightRequest="60"
                     StrokeShape="RoundRectangle 8"
                     StrokeThickness="0"
-                    Padding="16">
+                    Padding="4">
                     
-                    <Label
-                        Text="Name of fit 1"
-                        FontFamily="InterSemiBold"
-                        VerticalTextAlignment="Center"
-                        FontSize="16"
-                        />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Padding="12"
+                            Text="Name of fit 2"
+                            FontFamily="InterSemiBold"
+                            VerticalTextAlignment="Center"
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            />
+
+                        <Image
+                            Source="examplefit.png"
+                            MaximumHeightRequest="52"
+                            MaximumWidthRequest="52"
+                            Grid.Column="1"/>
+
+                    </Grid>
+
                 </Border>
                     
                 <Border
@@ -117,22 +143,37 @@
                     HeightRequest="60"
                     StrokeShape="RoundRectangle 8"
                     StrokeThickness="0"
-                    Padding="16">
+                    Padding="4">
                     
-                    <Label
-                        Text="Name of fit 3"
-                        FontFamily="InterSemiBold"
-                        VerticalTextAlignment="Center"
-                        FontSize="16"
-                        />
-                </Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
 
+                        <Label
+                            Padding="12"
+                            Text="Name of fit 3"
+                            FontFamily="InterSemiBold"
+                            VerticalTextAlignment="Center"
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            />
+
+                        <Image
+                            Source="examplefit.png"
+                            MaximumHeightRequest="52"
+                            MaximumWidthRequest="52"
+                            Grid.Column="1"/>
+
+                    </Grid>
+
+                </Border>
 
             </VerticalStackLayout>
 
-
-
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>

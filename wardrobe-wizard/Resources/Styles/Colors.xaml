@@ -8,7 +8,7 @@
     <Color x:Key="Secondary">#F9D402</Color>
     <Color x:Key="Tertiary">#8A6DE4</Color>
     <Color x:Key="BoneWhite">#F9F6EE</Color>
-    <Color x:Key="DarkBackground">#231732</Color>
+    <Color x:Key="DarkBackground">#291732</Color>
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>
     <Color x:Key="Gray300">#ACACAC</Color>
