@@ -42,7 +42,8 @@
                 FontFamily="InterSemiBold"
                 FontSize="32"
                 Clicked="OnNewFitClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                />
 
             <Button
                 x:Name="CounterBtn"

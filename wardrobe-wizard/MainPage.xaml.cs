@@ -23,10 +23,8 @@ public partial class MainPage : ContentPage
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
 
-	private void OnNewFitClicked(object sender, EventArgs e)
+	async private void OnNewFitClicked(object sender, EventArgs e)
 	{
-        NewFitBtn.WidthRequest = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density - 20;
-		Console.WriteLine(DeviceDisplay.MainDisplayInfo.Width);
-		Console.WriteLine(DeviceDisplay.MainDisplayInfo.Density);
+        await Shell.Current.GoToAsync("//NewOutfit");
     }
 }
