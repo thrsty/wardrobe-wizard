@@ -95,7 +95,7 @@
                             />
 
                         <Image
-                            Source="examplefit.png"
+                            Source="placeholderphoto.png"
                             MaximumHeightRequest="52"
                             MaximumWidthRequest="52"
                             Grid.Column="1"/>
@@ -128,7 +128,7 @@
                             />
 
                         <Image
-                            Source="examplefit.png"
+                            Source="placeholderphoto.png"
                             MaximumHeightRequest="52"
                             MaximumWidthRequest="52"
                             Grid.Column="1"/>
@@ -161,7 +161,7 @@
                             />
 
                         <Image
-                            Source="examplefit.png"
+                            Source="placeholderphoto.png"
                             MaximumHeightRequest="52"
                             MaximumWidthRequest="52"
                             Grid.Column="1"/>
