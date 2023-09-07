@@ -76,6 +76,6 @@
 	  <BundleResource Include="Resources\Images\home.svg" />
 	  <BundleResource Include="Resources\Images\plusfit.svg" />
 	  <BundleResource Include="Resources\Fonts\Inter-SemiBold.ttf" />
-	  <BundleResource Include="Resources\Images\examplefit.svg" />
+	  <BundleResource Include="Resources\Images\placeholderphoto.svg" />
 	</ItemGroup>
 </Project>
