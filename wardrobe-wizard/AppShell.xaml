@@ -8,19 +8,19 @@
 
     <TabBar>
         
-        <Tab Icon="house.png" Title="Home">
+        <Tab Icon="homeicon.png" Title="Home">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
         </Tab>
 
-        <Tab Icon="plusfit.png" Title="New Fit">
+        <Tab Icon="plussignicon.png" Title="New Fit">
             <ShellContent ContentTemplate="{DataTemplate local:NewOutfit}" Route="NewOutfit" />
         </Tab>
 
-        <Tab Icon="wardrobe.png" Title="Wardrobe">
+        <Tab Icon="wardrobeicon.png" Title="Wardrobe">
             <ShellContent ContentTemplate="{DataTemplate local:wardrobeView}" Route="wardrobeView" />
         </Tab>
 
-        <Tab Icon="outfit.png" Title="New Fit">
+        <Tab Icon="tshirticon.png" Title="New Fit">
             <ShellContent  ContentTemplate="{DataTemplate local:outfitView}" Route="outfitView" />
         </Tab>
 
