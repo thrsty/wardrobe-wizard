@@ -63,19 +63,19 @@
 	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
 	  <None Remove="Resources\Fonts\Inter-SemiBold.ttf" />
 	  <None Remove="Resources\Images\placeholderphoto.svg" />
-	  <None Remove="Resources\Images\homeicon.svg" />
 	  <None Remove="Resources\Images\plussignicon.svg" />
 	  <None Remove="Resources\Images\tshirticon.svg" />
 	  <None Remove="Resources\Images\wardrobeicon.svg" />
+	  <None Remove="Resources\Images\homeicon" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
 	  <BundleResource Include="Resources\Fonts\Inter-Regular.ttf" />
 	  <BundleResource Include="Resources\Fonts\Inter-SemiBold.ttf" />
 	  <BundleResource Include="Resources\Images\placeholderphoto.svg" />
-	  <BundleResource Include="Resources\Images\homeicon.svg" />
 	  <BundleResource Include="Resources\Images\plussignicon.svg" />
 	  <BundleResource Include="Resources\Images\tshirticon.svg" />
 	  <BundleResource Include="Resources\Images\wardrobeicon.svg" />
+	  <BundleResource Include="Resources\Images\homeicon" />
 	</ItemGroup>
 </Project>
