@@ -42,8 +42,10 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\wardrobe.svg" BaseSize="40,40" Padding="10" />
-		<MauiImage Update="Resources\Images\house.svg" BaseSize="40,40" Padding="10" />
+		<MauiImage Update="Resources\Images\homeicon.svg" BaseSize="35,35" Padding="10" />
+		<MauiImage Update="Resources\Images\wardrobeicon.svg" BaseSize="35,35" Padding="10" />
+		<MauiImage Update="Resources\Images\tshirticon.svg" BaseSize="35,35" Padding="10" />
+		<MauiImage Update="Resources\Images\plussignicon.svg" BaseSize="35,35" Padding="10" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -59,23 +61,21 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Inter-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
-	  <None Remove="Resources\Images\house.svg" />
-	  <None Remove="Resources\Images\wardrobe.svg" />
-	  <None Remove="Resources\Images\outfit.svg" />
-	  <None Remove="Resources\Images\new.svg" />
-	  <None Remove="Resources\Images\home.svg" />
-	  <None Remove="Resources\Images\plusfit.svg" />
 	  <None Remove="Resources\Fonts\Inter-SemiBold.ttf" />
-	  <None Remove="Resources\Images\exampleFit.svg" />
+	  <None Remove="Resources\Images\placeholderphoto.svg" />
+	  <None Remove="Resources\Images\homeicon.svg" />
+	  <None Remove="Resources\Images\plussignicon.svg" />
+	  <None Remove="Resources\Images\tshirticon.svg" />
+	  <None Remove="Resources\Images\wardrobeicon.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
 	  <BundleResource Include="Resources\Fonts\Inter-Regular.ttf" />
-	  <BundleResource Include="Resources\Images\outfit.svg" />
-	  <BundleResource Include="Resources\Images\outfit.svg" />
-	  <BundleResource Include="Resources\Images\home.svg" />
-	  <BundleResource Include="Resources\Images\plusfit.svg" />
 	  <BundleResource Include="Resources\Fonts\Inter-SemiBold.ttf" />
 	  <BundleResource Include="Resources\Images\placeholderphoto.svg" />
+	  <BundleResource Include="Resources\Images\homeicon.svg" />
+	  <BundleResource Include="Resources\Images\plussignicon.svg" />
+	  <BundleResource Include="Resources\Images\tshirticon.svg" />
+	  <BundleResource Include="Resources\Images\wardrobeicon.svg" />
 	</ItemGroup>
 </Project>
