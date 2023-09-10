@@ -66,7 +66,7 @@
 	  <None Remove="Resources\Images\plussignicon.svg" />
 	  <None Remove="Resources\Images\tshirticon.svg" />
 	  <None Remove="Resources\Images\wardrobeicon.svg" />
-	  <None Remove="Resources\Images\homeicon" />
+	  <None Remove="Resources\Images\homeicon.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
@@ -76,6 +76,6 @@
 	  <BundleResource Include="Resources\Images\plussignicon.svg" />
 	  <BundleResource Include="Resources\Images\tshirticon.svg" />
 	  <BundleResource Include="Resources\Images\wardrobeicon.svg" />
-	  <BundleResource Include="Resources\Images\homeicon" />
+	  <BundleResource Include="Resources\Images\homeicon.svg" />
 	</ItemGroup>
 </Project>
