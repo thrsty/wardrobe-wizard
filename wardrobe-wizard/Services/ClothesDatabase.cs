@@ -16,6 +16,10 @@ namespace wardrobe_wizard.Services
 			// Gets absolute path to the database file
 			var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ClothesDatabase.db");
 			db = new SQLiteAsyncConnection(databasePath);
+
+			await db.CreateTableAsync<Clothes>();
+
+			Console.WriteLine("Made the clothes database");
 		}
 	}
 }
