@@ -67,6 +67,8 @@
 	  <None Remove="Resources\Images\tshirticon.svg" />
 	  <None Remove="Resources\Images\wardrobeicon.svg" />
 	  <None Remove="Resources\Images\homeicon.svg" />
+	  <None Remove="Services\" />
+	  <None Remove="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
@@ -77,5 +79,9 @@
 	  <BundleResource Include="Resources\Images\tshirticon.svg" />
 	  <BundleResource Include="Resources\Images\wardrobeicon.svg" />
 	  <BundleResource Include="Resources\Images\homeicon.svg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Services\" />
+	  <Folder Include="Models\" />
 	</ItemGroup>
 </Project>
