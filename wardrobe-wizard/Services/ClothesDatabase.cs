@@ -23,4 +23,3 @@ namespace wardrobe_wizard.Services
 		}
 	}
 }
-
