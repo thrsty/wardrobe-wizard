@@ -24,10 +24,9 @@ public partial class itemDetails : ContentPage
 		itemClean.Text		= _clothingItem.isClean.ToString();
     }
 
-    void deleteBtnClicked(System.Object sender, System.EventArgs e)
+    async void deleteBtnClicked(System.Object sender, System.EventArgs e)
     {
-		App.ClothingItemRepo.RemoveItemAsync(id);
-
-		deleteBtn.Text = "will delete";
+		await App.ClothingItemRepo.RemoveItemAsync(id);
+		await Navigation.PopAsync();
     }
 }

@@ -60,5 +60,7 @@ public partial class newItem : ContentPage
             formality = formalityPicker.SelectedItem.ToString(),
             isClean = true
         });
+
+        await Navigation.PopAsync();
     }
 }
