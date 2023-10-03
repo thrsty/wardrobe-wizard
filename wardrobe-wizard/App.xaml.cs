@@ -4,8 +4,11 @@ namespace wardrobe_wizard;
 
 public partial class App : Application
 {
-	private static clothingItemRepository clothingItemRepo;
+	// gets width of the screen in devices pixel measurements
+	public static readonly double fullscreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
 
+	// database setup
+    private static clothingItemRepository clothingItemRepo;
 	public static clothingItemRepository ClothingItemRepo
 	{
 		get
@@ -28,6 +31,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+        MainPage = new AppShell();
 	}
 }

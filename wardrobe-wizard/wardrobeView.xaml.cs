@@ -1,6 +1,4 @@
 ﻿using wardrobe_wizard.Models;
-using wardrobe_wizard.Data;
-using System.Collections.ObjectModel;
 
 namespace wardrobe_wizard;
 

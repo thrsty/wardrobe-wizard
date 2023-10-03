@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using SQLite;
-using System.IO;
+﻿using SQLite;
 using wardrobe_wizard.Models;
 
 namespace wardrobe_wizard.Data

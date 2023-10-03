@@ -1,6 +1,4 @@
 ﻿using wardrobe_wizard.Models;
-using wardrobe_wizard.Data;
-using SQLite;
 
 namespace wardrobe_wizard;
 
@@ -22,7 +20,7 @@ public partial class newItem : ContentPage
         typeList.Add("Necklace");
         typePicker.ItemsSource = typeList;
 
-        /* // Adds different fits of clothing to picker for user to pick from
+        // Adds different fits of clothing to picker for user to pick from
         var fitList = new List<string>();
         fitList.Add("Tight");
         fitList.Add("Medium");
@@ -41,7 +39,7 @@ public partial class newItem : ContentPage
         formalityList.Add("Casual");
         formalityList.Add("Business Casual");
         formalityList.Add("Formal");
-        formalityPicker.ItemsSource = formalityList; */
+        formalityPicker.ItemsSource = formalityList;
     }
 
     async void DoneBtn_Clicked(System.Object sender, System.EventArgs e)
@@ -52,13 +50,15 @@ public partial class newItem : ContentPage
         await App.ClothingItemRepo.SaveItemAsync(new clothingItem
         {
             name = nameOfItem.Text,
+            color = "000000",
             type = typePicker.SelectedItem.ToString(),
-            /* brand = brandOfItem.Text,
+            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/SVG_Logo.svg/1200px-SVG_Logo.svg.png",
+            brand = brandOfItem.Text,
             fit = fitPicker.SelectedItem.ToString(),
-            material = "clothing material",
+            material = materialOfItem.Text,
             price = pricePicker.SelectedItem.ToString(),
             formality = formalityPicker.SelectedItem.ToString(),
-            isClean = true */
+            isClean = true
         });
     }
 }
