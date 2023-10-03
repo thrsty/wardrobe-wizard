@@ -48,7 +48,6 @@ public partial class newItem : ContentPage
     {
         Console.WriteLine("Add to database");
 
-
         // add item to database
         await App.ClothingItemRepo.SaveItemAsync(new clothingItem
         {

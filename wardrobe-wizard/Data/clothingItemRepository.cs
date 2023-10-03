@@ -25,12 +25,17 @@ namespace wardrobe_wizard.Data
             return _database.Table<clothingItem>().ToListAsync();
 		}
 
-
 		// adds row to database with clothingItem fields
 		public Task<int> SaveItemAsync(clothingItem _clothingItem)
 		{
 			Console.WriteLine("saving item");
 			return _database.InsertAsync(_clothingItem);
+		}
+
+		// deletes entry from clothes database
+		public Task RemoveItemAsync(int id)
+		{
+			return _database.DeleteAsync<clothingItem>(id);
 		}
 	}
 }

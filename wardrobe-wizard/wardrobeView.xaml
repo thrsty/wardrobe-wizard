@@ -12,13 +12,14 @@
     <CollectionView
         x:Name="wardrobeCollectionView"
         ItemsLayout="VerticalGrid, 2"
-        SelectionMode="None"
-        EmptyView="No clothes yet!">
+        SelectionMode="Single"
+        EmptyView="No clothes yet!"
+        SelectionChanged="wardrobeCollectionView_SelectionChanged">
 
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <VerticalStackLayout Spacing="7">
-                    <!-- <Border
+                    <Border
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="{StaticResource Primary}"
                         StrokeThickness="0"
@@ -29,7 +30,7 @@
                         <Image Source="{Binding image}"
                                 MaximumHeightRequest="250"
                                 MaximumWidthRequest="250"/>
-                    </Border> -->
+                    </Border>
 
                     <Border
                         StrokeShape="RoundRectangle 10"

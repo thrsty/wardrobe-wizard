@@ -11,7 +11,7 @@ namespace wardrobe_wizard.Models
 		public string name { get; set; }
         //public string color { get; set; }
         public string type { get; set; }
-        /*public string image { get; set; }
+        /* public string image { get; set; }
         public string brand { get; set; }
         public string fit { get; set; }
         public string material { get; set; }
