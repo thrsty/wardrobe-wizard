@@ -31,5 +31,9 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-</Shell>
+    <ShellContent
+        Title="New Item"
+        ContentTemplate="{DataTemplate local:newItem}"
+        Route="newItem" />
 
+</Shell>

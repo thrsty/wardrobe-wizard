@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wardrobe_wizard.newItem"
+             Title="New Item">
+
+    <VerticalStackLayout
+        HorizontalOptions="Center">
+        <Editor
+            x:Name="nameOfItem"
+            Placeholder="Enter your item's name"/>
+
+        <Picker
+            x:Name="typePicker"
+            Title="Type"/>
+
+        <!-- <Editor
+            x:Name="brandOfItem"
+            Placeholder="Brand"/>
+
+        <Picker
+            x:Name="fitPicker"
+            Title="Fit"/>
+
+        <Picker
+            x:Name="pricePicker"
+            Title="Price"/>
+
+        <Picker
+            x:Name="formalityPicker"
+            Title="Foramlity"/> -->
+
+        <Button
+            x:Name="DoneBtn"
+            Text="Done"
+            Clicked="DoneBtn_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
