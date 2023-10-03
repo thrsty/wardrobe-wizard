@@ -63,4 +63,9 @@ public partial class newItem : ContentPage
 
         await Navigation.PopAsync();
     }
+
+    async void photoBtn_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Navigation.PushAsync(new photoPage());
+    }
 }

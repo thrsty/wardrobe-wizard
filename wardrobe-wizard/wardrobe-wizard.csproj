@@ -33,6 +33,9 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" />
@@ -61,6 +64,7 @@
 		<PackageReference Include="SQLitePCLRaw.core" Version="2.1.6" />
 		<PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.6" />
 		<PackageReference Include="SQLitePCLRaw.provider.e_sqlite3" Version="2.1.6" />
+		<PackageReference Include="Camera.MAUI" Version="1.4.4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -75,6 +79,7 @@
 	  <None Remove="Models\" />
 	  <None Remove="Data\" />
 	  <None Remove="Resources\.DS_Store" />
+	  <None Remove="Platforms\MacCatalyst\Info.plist" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
@@ -85,7 +90,6 @@
 	  <BundleResource Include="Resources\Images\tshirticon.svg" />
 	  <BundleResource Include="Resources\Images\wardrobeicon.svg" />
 	  <BundleResource Include="Resources\Images\homeicon.svg" />
-	  <BundleResource Include="Resources\.DS_Store" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />

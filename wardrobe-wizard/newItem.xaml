@@ -4,40 +4,63 @@
              x:Class="wardrobe_wizard.newItem"
              Title="New Item">
 
-    <VerticalStackLayout HorizontalOptions="Center">
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        Spacing="10"
+        Margin="6, 0, 6, 0">
 
         <Editor
             x:Name="nameOfItem"
-            Placeholder="Name"/>
+            Placeholder="Name"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
 
         <Picker
             x:Name="typePicker"
-            Title="Type"/>
+            Title="Type"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
 
         <Editor
             x:Name="brandOfItem"
-            Placeholder="Brand"/>
+            Placeholder="Brand"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
 
         <Picker
             x:Name="fitPicker"
-            Title="Fit"/>
+            Title="Fit"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
+
+        <Button
+            x:Name="photoBtn"
+            Text="Take photo"
+            Clicked="photoBtn_Clicked"/>
 
         <Editor
             x:Name="materialOfItem"
-            Placeholder="Material"/>
+            Placeholder="Material"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
 
         <Picker
             x:Name="pricePicker"
-            Title="Price"/>
+            Title="Price"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
 
         <Picker
             x:Name="formalityPicker"
-            Title="Formality"/>
+            Title="Formality"
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="Fill"/>
 
         <Button
             x:Name="DoneBtn"
             Text="Done"
-            Clicked="DoneBtn_Clicked"/>
+            Clicked="DoneBtn_Clicked"
+            HorizontalOptions="Fill"/>
 
     </VerticalStackLayout>
 
