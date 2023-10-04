@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="wardrobe_wizard.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:wardrobe_wizard"
+    Shell.FlyoutBehavior="Disabled">
+
+    <!-- bar at the bottom of the pages specified here with icons that go to each one -->
+    <TabBar>
+        
+        <Tab Icon="homeicon.png" Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+
+        <Tab Icon="plussignicon.png" Title="New Fit">
+            <ShellContent ContentTemplate="{DataTemplate local:NewOutfit}" Route="NewOutfit" />
+        </Tab>
+
+        <Tab Icon="wardrobeicon.png" Title="Wardrobe">
+            <ShellContent ContentTemplate="{DataTemplate local:wardrobeView}" Route="wardrobeView" />
+        </Tab>
+
+        <Tab Icon="tshirticon.png" Title="New Fit">
+            <ShellContent  ContentTemplate="{DataTemplate local:outfitView}" Route="outfitView" />
+        </Tab>
+
+    </TabBar>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="New Item"
+        ContentTemplate="{DataTemplate local:newItem}"
+        Route="newItem" />
+
+</Shell>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="wardrobe_wizard.newItem"
+             Title="New Item">
+
+    <!-- data entry points for a new item of clothing-->
+    <ScrollView>
+
+        <VerticalStackLayout
+            HorizontalOptions="Center"
+            Spacing="10"
+            Margin="6, 0, 6, 0">
+
+            <Editor
+                x:Name="nameOfItem"
+                Placeholder="Name"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Picker
+                x:Name="typePicker"
+                Title="Type"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Editor
+                x:Name="brandOfItem"
+                Placeholder="Brand"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Picker
+                x:Name="fitPicker"
+                Title="Fit"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Button
+                x:Name="openCameraBtn"
+                Text="Open camera"
+                Clicked="openCameraBtn_Clicked"/>
+
+            <cv:CameraView
+                x:Name="cameraView"
+                WidthRequest="0"
+                HeightRequest="0"
+                CamerasLoaded="cameraView_CamerasLoaded"/>
+
+            <Button
+                x:Name="takePhoto"
+                Clicked="takePhoto_Clicked"
+                Text="Take photo!"
+                MaximumHeightRequest="0"
+                MaximumWidthRequest="0"/>
+        
+            <Editor
+                x:Name="materialOfItem"
+                Placeholder="Material"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Picker
+                x:Name="pricePicker"
+                Title="Price"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Picker
+                x:Name="formalityPicker"
+                Title="Formality"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Button
+                x:Name="DoneBtn"
+                Text="Done"
+                Clicked="DoneBtn_Clicked"
+                HorizontalOptions="Fill"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>
