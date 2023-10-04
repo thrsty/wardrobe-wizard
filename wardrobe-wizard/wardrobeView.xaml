@@ -6,9 +6,9 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add item" Clicked="ToolbarItem_Clicked"/>
-        <ToolbarItem Text="Refresh" Clicked="ToolbarItem_Clicked_1"/>
     </ContentPage.ToolbarItems>
 
+    <!-- shows all of a uses items of clothing -->
     <CollectionView
         x:Name="wardrobeCollectionView"
         ItemsLayout="VerticalGrid, 2"

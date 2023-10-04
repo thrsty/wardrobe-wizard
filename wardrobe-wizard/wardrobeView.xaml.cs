@@ -10,22 +10,20 @@ public partial class wardrobeView : ContentPage
 		InitializeComponent();
     }
 
+    // refreshes page upon appearing
     protected override async void OnAppearing()
     {
         base.OnAppearing();
         wardrobeCollectionView.ItemsSource = await App.ClothingItemRepo.GetItemsAsync();
     }
 
+    // sends user to new navigation page
     void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
     {
         Navigation.PushAsync(new newItem());
     }
 
-    async void ToolbarItem_Clicked_1(System.Object sender, System.EventArgs e)
-    {
-        wardrobeCollectionView.ItemsSource = await App.ClothingItemRepo.GetItemsAsync();
-    }
-
+    // when an item of clothing is selected, show the item's details page
     void wardrobeCollectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
         clothingItem _clothingItem = (clothingItem)wardrobeCollectionView.SelectedItem;

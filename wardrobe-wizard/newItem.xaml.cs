@@ -1,9 +1,13 @@
-﻿using wardrobe_wizard.Models;
+﻿using Camera.MAUI;
+using wardrobe_wizard.Models;
 
 namespace wardrobe_wizard;
 
 public partial class newItem : ContentPage
 {
+    public string imagePath;
+    double fitPicFileName = 0;
+
     public newItem()
     {
         InitializeComponent();
@@ -42,17 +46,63 @@ public partial class newItem : ContentPage
         formalityPicker.ItemsSource = formalityList;
     }
 
+    // sets camera to first camera on device when cameras are accessed
+    void cameraView_CamerasLoaded(System.Object sender, System.EventArgs e)
+    {
+        cameraView.Camera = cameraView.Cameras.First();
+
+        MainThread.BeginInvokeOnMainThread(async () =>
+        {
+            await cameraView.StopCameraAsync();
+            await cameraView.StartCameraAsync();
+        });
+    }
+
+    // increases camera view size and the take photo button size, worlds worst animation
+    void openCameraBtn_Clicked(System.Object sender, System.EventArgs e)
+    {
+        cameraView.WidthRequest = 400;
+        cameraView.HeightRequest = 400;
+
+        takePhoto.MaximumHeightRequest = openCameraBtn.Height;
+        takePhoto.MaximumWidthRequest = openCameraBtn.Width;
+    }
+
+    void takePhoto_Clicked(System.Object sender, System.EventArgs e)
+    {
+        // gets the name for the file
+        fitPicFileName = getHighestPhotoNumberID();
+
+        // combines directory with fitPicFileName string and sets the clothingItem's itemPath attribute to this path
+        imagePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), fitPicFileName.ToString() + ".png");
+
+        // saves current image on camera display
+        cameraView.GetSnapShot(Camera.MAUI.ImageFormat.PNG);
+        cameraView.SaveSnapShot(Camera.MAUI.ImageFormat.PNG, imagePath);
+
+        // double check?
+        Console.WriteLine(imagePath);
+
+        // stops camera and resets camera-related ui elements
+        cameraView.StopCameraAsync();
+
+        cameraView.WidthRequest = 0;
+        cameraView.HeightRequest = 0;
+
+        takePhoto.MaximumHeightRequest = 0;
+        takePhoto.MaximumWidthRequest = 0;
+    }
+
     async void DoneBtn_Clicked(System.Object sender, System.EventArgs e)
     {
-        Console.WriteLine("Add to database");
-
-        // add item to database
+        // add item to database and goes back to wardrobe view
         await App.ClothingItemRepo.SaveItemAsync(new clothingItem
         {
             name = nameOfItem.Text,
+            // need to implement colour picker
             color = "000000",
             type = typePicker.SelectedItem.ToString(),
-            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/SVG_Logo.svg/1200px-SVG_Logo.svg.png",
+            image = imagePath,
             brand = brandOfItem.Text,
             fit = fitPicker.SelectedItem.ToString(),
             material = materialOfItem.Text,
@@ -64,8 +114,16 @@ public partial class newItem : ContentPage
         await Navigation.PopAsync();
     }
 
-    async void photoBtn_Clicked(System.Object sender, System.EventArgs e)
+    int getHighestPhotoNumberID()
     {
-        await Navigation.PushAsync(new photoPage());
+        int count = 0;
+
+        // iterates image filename by one if a file with the same name exists
+        while (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), count.ToString() + ".png")) == true)
+        {
+            count++;
+        }
+
+        return count;
     }
 }

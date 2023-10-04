@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:wardrobe_wizard"
     Shell.FlyoutBehavior="Disabled">
 
+    <!-- bar at the bottom of the pages specified here with icons that go to each one -->
     <TabBar>
         
         <Tab Icon="homeicon.png" Title="Home">

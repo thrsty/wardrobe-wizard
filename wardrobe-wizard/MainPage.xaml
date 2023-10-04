@@ -6,6 +6,8 @@
              x:Class="wardrobe_wizard.MainPage"
              Title="Home">
 
+    <!-- first page user sees, acts as a home page with typical dashboard info-->
+
     <ScrollView>
 
         <VerticalStackLayout
@@ -167,15 +169,9 @@
                             MaximumHeightRequest="52"
                             MaximumWidthRequest="52"
                             Grid.Column="1"/>
-
                     </Grid>
-
                 </Border>
-
             </VerticalStackLayout>
-
         </VerticalStackLayout>
-
     </ScrollView>
-
 </ContentPage>

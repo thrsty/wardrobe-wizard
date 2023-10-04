@@ -4,7 +4,7 @@ namespace wardrobe_wizard;
 
 public partial class App : Application
 {
-	// gets width of the screen in devices pixel measurements
+	// gets width of the screen in device's pixel measurements
 	public static readonly double fullscreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
 
 	// database setup
@@ -13,6 +13,7 @@ public partial class App : Application
 	{
 		get
 		{
+			// if there is a database already, don't make one. otherwise make one
 			if (clothingItemRepo == null)
 			{
                 clothingItemRepo = new clothingItemRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "clothingItems.db3"));

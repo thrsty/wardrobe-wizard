@@ -7,7 +7,7 @@ namespace wardrobe_wizard.Data
 	{
         private readonly SQLiteAsyncConnection _database;
 
-		// init
+		// initialise the database
         public clothingItemRepository(string dbPath)
 		{
 			_database = new SQLiteAsyncConnection(dbPath);
@@ -15,7 +15,7 @@ namespace wardrobe_wizard.Data
             Console.WriteLine("made sqliteAsyncConnection");
         }
 
-		// returns all database items
+		// returns all clothingItems in the database
 		public Task<List<clothingItem>> GetItemsAsync()
 		{
 			Console.WriteLine("getting items");

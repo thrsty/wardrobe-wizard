@@ -12,6 +12,7 @@ public partial class itemDetails : ContentPage
 
 		id = _clothingItem.id;
 
+		// sets each elements text to the specific item's values
 		itemName.Text		= _clothingItem.name;
 		itemColor.Text		= _clothingItem.color;
 		itemType.Text		= _clothingItem.type;
@@ -26,6 +27,7 @@ public partial class itemDetails : ContentPage
 
     async void deleteBtnClicked(System.Object sender, System.EventArgs e)
     {
+		// if deletes item and goes back a page
 		await App.ClothingItemRepo.RemoveItemAsync(id);
 		await Navigation.PopAsync();
     }
