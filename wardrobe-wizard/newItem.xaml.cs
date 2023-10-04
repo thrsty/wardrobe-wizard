@@ -1,5 +1,4 @@
-﻿using Camera.MAUI;
-using wardrobe_wizard.Models;
+﻿using wardrobe_wizard.Models;
 
 namespace wardrobe_wizard;
 
