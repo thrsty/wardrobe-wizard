@@ -17,6 +17,7 @@
                 x:Name="nameOfItem"
                 Placeholder="Name"
                 HorizontalTextAlignment="Center"
+                PlaceholderColor="{StaticResource Secondary}"
                 HorizontalOptions="Fill"/>
 
             <Picker
