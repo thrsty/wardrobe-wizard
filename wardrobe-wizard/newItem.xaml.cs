@@ -28,7 +28,7 @@ public partial class newItem : ContentPage
         // Adds different prices of clothing to picker for user to pick from
         var priceList = new List<string>()
         {
-            "$", "$$", "$$$"
+            "$", "$$", "$$$", "$$$$"
         };
         pricePicker.ItemsSource = priceList;
 

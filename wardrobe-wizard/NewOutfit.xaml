@@ -2,15 +2,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wardrobe_wizard.NewOutfit"
-             Title="New Outfit">
-
-    <VerticalStackLayout>
-
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-
+             Title="NewOutfit">
+    <VerticalStackLayout Spacing="10">
+        <Button Margin="0,10,0,0"
+            x:Name="outfitPlus"
+            ImageSource="plussignicon"
+            Padding="40"
+            FontSize="400"
+            FontFamily="InterSemiBold"
+            />
+        <Button Margin="0,10,0,0"
+            x:Name="genOutfitButton"
+            Text="Generate Outfit"
+            FontSize="35"
+            FontFamily="InterSemiBold"
+            />
+        <Button Margin="0,10,0,0"
+            x:Name="occasionButton"
+            Text="Occasion"
+            FontSize="35"
+            FontFamily="InterSemiBold"
+            />
+        <Button Margin="0,10,0,0"
+            x:Name="tagsEnterButton"
+            Text="Tags"
+            FontSize="35"
+            FontFamily="InterSemiBold"
+            Padding="0,0,0,40"
+            />
     </VerticalStackLayout>
 
 </ContentPage>
