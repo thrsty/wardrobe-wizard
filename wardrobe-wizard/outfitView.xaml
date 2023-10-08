@@ -4,13 +4,47 @@
              x:Class="wardrobe_wizard.outfitView"
              Title="Outfits View">
 
-    <VerticalStackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add item" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
 
-        <Label 
-            Text="fits"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <!-- shows all of a uses items of clothing -->
+    <CollectionView
+        x:Name="outfitCollectionView"
+        ItemsLayout="VerticalGrid, 2"
+        SelectionMode="Single"
+        EmptyView="No outfits yet!"
+        SelectionChanged="outfitCollectionView_SelectionChanged">
 
-    </VerticalStackLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <VerticalStackLayout Spacing="7">
+                    <Border
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="{StaticResource Primary}"
+                        StrokeThickness="0"
+                        Margin="5, 4, 5, 0"
+                        MaximumHeightRequest="256"
+                        MaximumWidthRequest="256">
 
+                        <Image Source="{Binding image}"
+                                MaximumHeightRequest="250"
+                                MaximumWidthRequest="250"/>
+                    </Border>
+
+                    <Border
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="{StaticResource Primary}"
+                        StrokeThickness="0"
+                        Margin="5, 0, 5, 6"
+                        Padding="8">
+
+                        <VerticalStackLayout>
+                            <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
