@@ -14,7 +14,7 @@ public partial class newItem : ContentPage
         // Adds different types of clothing to picker for user to pick from
         var typeList = new List<string>()
         {
-            "Top", "Bottom", "Jacket", "Shoes", "Socks", "Hat", "Accessory"
+            "T-shirt", "Long sleeved t-shirt", "Pants", "Shorts", "Jacket", "Shoes", "Socks", "Hat", "Ring/s", "Necklace"
         };
         typePicker.ItemsSource = typeList;
 
