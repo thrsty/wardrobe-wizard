@@ -17,31 +17,27 @@ public partial class NewOutfit : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        Console.WriteLine("cleared items?");
-        items = new List<clothingItem>();
+
+        // selectedItems thing is munted because it doesn't change when you go from another page back to it
+        // so this sets it to null when the page appears so that only newly selected items are added
+        itemsCollectionView.SelectedItems = null;
+
         itemsCollectionView.ItemsSource = await clothingItemRepository.GetItemsAsync();
     }
 
-    // makes list of all of the clothingItems that are selected, to be used in doneBtnClicked method
+    // adds all of the clothingItems that are selected to items list to be used in doneBtnClicked method
     void itemsCollectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
-
-        if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
+        items = new List<clothingItem>();
+        foreach (clothingItem item in itemsCollectionView.SelectedItems)
         {
-            items = new List<clothingItem>();
-
-            foreach (clothingItem clothingItem in e.CurrentSelection)
-            {
-                items.Add(clothingItem);
-            }
+            items.Add(item);
         }
     }
 
     // adds outfit to the database, using the items list
     async void doneBtnClicked(System.Object sender, System.EventArgs e)
     {
-        Console.WriteLine("outfit done button clicked");
-
         // validation
         int shirtSum = 0, pantsSum = 0, shoesSum = 0, jacketSum = 0, socksSum = 0, hatSum = 0;
         
@@ -83,6 +79,7 @@ public partial class NewOutfit : ContentPage
         // you can never be too careful
         Console.WriteLine(shirtSum + " " + pantsSum + " " + shoesSum + " " + jacketSum + " " + socksSum + " " + hatSum);
 
+        // if outfit does not have one shirt, pair of pants, pair of shoes or any other conditions here it will not add it the database.
         if (shirtSum != 1 || pantsSum != 1|| shoesSum != 1 || jacketSum > 1 || socksSum > 1 || hatSum > 1 || nameOfFit.Text == null || nameOfFit.Text == string.Empty)
         {
             Console.WriteLine("You cannot select more than one type of clothing per outfit.");
@@ -95,7 +92,7 @@ public partial class NewOutfit : ContentPage
         await outfitRepository.SaveOutfitAsync(new outfitComponents
         {
             name = nameOfFit.Text,
-            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/SVG_Logo.svg/1200px-SVG_Logo.svg.png",
+            image = items[0].image,
             shirt = shirtID,
             pants = pantsID,
             shoes = shoesID,
@@ -104,7 +101,6 @@ public partial class NewOutfit : ContentPage
             hat = hatID,
         });
 
-        // idk why this doesnt do anything
-        await Shell.Current.GoToAsync("//NewOutfit");
+        await Shell.Current.GoToAsync("//outfitView");
     }
 }
