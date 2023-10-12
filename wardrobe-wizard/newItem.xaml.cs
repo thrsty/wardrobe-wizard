@@ -63,6 +63,7 @@ public partial class newItem : ContentPage
         takePhoto.MaximumWidthRequest = openCameraBtn.Width;
     }
 
+    // takes photo
     void takePhoto_Clicked(System.Object sender, System.EventArgs e)
     {
         // gets the name for the file
@@ -88,6 +89,20 @@ public partial class newItem : ContentPage
         takePhoto.MaximumWidthRequest = 0;
     }
 
+    // used for unique names of clothing photos
+    int getHighestPhotoNumberID()
+    {
+        int count = 0;
+
+        // iterates image filename by one if a file with the same name exists
+        while (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), count.ToString() + ".png")) == true)
+        {
+            count++;
+        }
+
+        return count;
+    }
+
     async void DoneBtn_Clicked(System.Object sender, System.EventArgs e)
     {
         // add item to database and goes back to wardrobe view
@@ -107,18 +122,5 @@ public partial class newItem : ContentPage
         });
 
         await Navigation.PopAsync();
-    }
-
-    int getHighestPhotoNumberID()
-    {
-        int count = 0;
-
-        // iterates image filename by one if a file with the same name exists
-        while (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), count.ToString() + ".png")) == true)
-        {
-            count++;
-        }
-
-        return count;
     }
 }

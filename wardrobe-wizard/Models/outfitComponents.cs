@@ -13,14 +13,13 @@ namespace wardrobe_wizard.Models
         public string image { get; set; }
 
         // mandatory components
-        public clothingItem shirt { get; set; }
-        public clothingItem pants { get; set; }
-        public clothingItem shoes { get; set; }
+        public int shirt { get; set; }
+        public int pants { get; set; }
+        public int shoes { get; set; }
 
         // optional components
-        public clothingItem jacket { get; set; }
-        public clothingItem socks { get; set; }
-        public clothingItem hat { get; set; }
-        public clothingItem[] accessories { get; set; }
+        public int jacket { get; set; }
+        public int socks { get; set; }
+        public int hat { get; set; }
     }
 }

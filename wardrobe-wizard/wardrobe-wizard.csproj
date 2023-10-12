@@ -48,7 +48,7 @@
 		<MauiImage Update="Resources\Images\homeicon.svg" BaseSize="35,35" Padding="10" />
 		<MauiImage Update="Resources\Images\wardrobeicon.svg" BaseSize="35,35" Padding="10" />
 		<MauiImage Update="Resources\Images\tshirticon.svg" BaseSize="35,35" Padding="10" />
-		<MauiImage Update="Resources\Images\plussignicon.svg" BaseSize="35,35" Padding="10" TintColor="#F9D402"/>
+		<MauiImage Update="Resources\Images\plussignicon.svg" BaseSize="35,35" Padding="10" TintColor="#F9D402" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />

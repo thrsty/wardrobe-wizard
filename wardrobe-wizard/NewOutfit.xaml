@@ -3,53 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wardrobe_wizard.NewOutfit"
              Title="New Outfit">
-    <VerticalStackLayout>
 
-        <!-- shows all of a user's items of clothing -->
-        <CollectionView
-            x:Name="itemsCollectionView"
-            ItemsLayout="VerticalGrid, 2"
-            SelectionMode="Multiple"
-            EmptyView="No clothes yet!"
-            SelectionChanged="itemsCollectionView_SelectionChanged">
+    <ScrollView>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <VerticalStackLayout Spacing="7">
-                        <Border
-                            StrokeShape="RoundRectangle 10"
-                            BackgroundColor="{StaticResource Primary}"
-                            StrokeThickness="0"
-                            Margin="5, 4, 5, 0"
-                            MaximumHeightRequest="256"
-                            MaximumWidthRequest="256">
+        <VerticalStackLayout>
 
-                            <Image Source="{Binding image}"
-                                    MaximumHeightRequest="250"
-                                    MaximumWidthRequest="250"/>
-                        </Border>
+            <!-- shows all of a user's items of clothing -->
+            <CollectionView
+                x:Name="itemsCollectionView"
+                ItemsLayout="VerticalGrid, 2"
+                SelectionMode="Multiple"
+                EmptyView="No clothes yet!"
+                SelectionChanged="itemsCollectionView_SelectionChanged">
 
-                        <Border
-                            StrokeShape="RoundRectangle 10"
-                            BackgroundColor="{StaticResource Primary}"
-                            StrokeThickness="0"
-                            Margin="5, 0, 5, 6"
-                            Padding="8">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="7">
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                Margin="5, 4, 5, 0"
+                                MaximumHeightRequest="256"
+                                MaximumWidthRequest="256">
 
-                            <VerticalStackLayout>
-                                <Label Text="{Binding type}" HorizontalOptions="Center" Padding="0, 8, 0, 2" FontFamily="Inter"/>
-                                <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
-                            </VerticalStackLayout>
-                        </Border>
-                    </VerticalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                                <Image Source="{Binding image}"
+                                        MaximumHeightRequest="250"
+                                        MaximumWidthRequest="250"/>
+                            </Border>
 
-        <Button
-            Text="Done"
-            x:Name="doneBtn"
-            Clicked="doneBtnClicked">
-        </Button>
-    </VerticalStackLayout>
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                Margin="5, 0, 5, 6"
+                                Padding="8">
+
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding type}" HorizontalOptions="Center" Padding="0, 8, 0, 2" FontFamily="Inter"/>
+                                    <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Editor
+                x:Name="nameOfFit"
+                Placeholder="Name of outfit"
+                HorizontalTextAlignment="Center"
+                PlaceholderColor="{StaticResource Secondary}"
+                HorizontalOptions="Fill"/>
+
+            <Button
+                Text="Done"
+                x:Name="doneBtn"
+                Clicked="doneBtnClicked">
+            </Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

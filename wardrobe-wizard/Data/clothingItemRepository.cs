@@ -11,15 +11,15 @@ namespace wardrobe_wizard.Data
         {
         }
 
-        // initialise the database
-        async static Task init()
+        // initialise the clothing database
+        public async static Task init()
         {
             if (clothingDb is not null)
                 return;
 
             clothingDb = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "clothingItems.db3"));
             await clothingDb.CreateTableAsync<clothingItem>();
-            Console.WriteLine("made clothing database");
+            Console.WriteLine("made clothing database at " + clothingDb.DatabasePath);
         }
 
         // returns all clothingItems in the database
@@ -28,6 +28,15 @@ namespace wardrobe_wizard.Data
             await init();
             Console.WriteLine("getting items");
             return await clothingDb.Table<clothingItem>().ToListAsync();
+        }
+
+        // returns specific outfit
+        static public Task<clothingItem> GetItemAsync(int id)
+        {
+            Task.Run(init);
+            Task.WaitAll();
+            Console.WriteLine("getting clothingItem from " + clothingDb.DatabasePath);
+            return clothingDb.GetAsync<clothingItem>(id);
         }
 
         // adds row to database with clothingItem fields

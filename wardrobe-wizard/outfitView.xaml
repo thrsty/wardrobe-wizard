@@ -39,9 +39,8 @@
                         Margin="5, 0, 5, 6"
                         Padding="8">
 
-                        <VerticalStackLayout>
-                            <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
-                        </VerticalStackLayout>
+                        <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
+
                     </Border>
                 </VerticalStackLayout>
             </DataTemplate>

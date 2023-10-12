@@ -4,10 +4,10 @@ namespace wardrobe_wizard.Models
 {
 	public class clothingItem
 	{
-        // sqlite specific thing for unique ids
+        // sqlite specific properties for unique ids that we don't have to worry about
 		[PrimaryKey, AutoIncrement]
 
-        // all attributes of an item
+        // all attributes of an item of clothing
         public int id { get; set; }
 		public string name { get; set; }
         public string color { get; set; }

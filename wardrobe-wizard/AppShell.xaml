@@ -21,12 +21,13 @@
             <ShellContent ContentTemplate="{DataTemplate local:wardrobeView}" Route="wardrobeView" />
         </Tab>
 
-        <Tab Icon="tshirticon.png" Title="New Fit">
+        <Tab Icon="tshirticon.png" Title="Outfits">
             <ShellContent  ContentTemplate="{DataTemplate local:outfitView}" Route="outfitView" />
         </Tab>
 
     </TabBar>
 
+    <!-- chill little definitions for chill little people -->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"

@@ -5,7 +5,6 @@ namespace wardrobe_wizard;
 
 public partial class wardrobeView : ContentPage
 {
-
 	public wardrobeView()
 	{
 		InitializeComponent();
@@ -27,7 +26,6 @@ public partial class wardrobeView : ContentPage
     // when an item of clothing is selected, show the item's details page
     void wardrobeCollectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
-        clothingItem _clothingItem = (clothingItem)wardrobeCollectionView.SelectedItem;
-        Navigation.PushAsync(new itemDetails(_clothingItem));
+        Navigation.PushAsync(new itemDetails((clothingItem)wardrobeCollectionView.SelectedItem));
     }
 }

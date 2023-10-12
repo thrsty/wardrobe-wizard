@@ -17,16 +17,15 @@ public partial class outfitView : ContentPage
         outfitCollectionView.ItemsSource = await outfitRepository.GetOutfitsAsync();
     }
 
-    // sends user to new navigation page
+    // sends user to new outfit page, incase they don't see the one at the bottom of the screen for some reason...
     void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
     {
         Shell.Current.GoToAsync("//NewOutfit");
     }
 
-    // when an item of clothing is selected, show the item's details page
+    // when an outfit is selected, show the outfit's details page
     void outfitCollectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
-        outfitComponents outfit = (outfitComponents)outfitCollectionView.SelectedItem;
-        Navigation.PushAsync(new outfitDetails(outfit));
+        Navigation.PushAsync(new outfitDetails(((outfitComponents)outfitCollectionView.SelectedItem).id));
     }
 }

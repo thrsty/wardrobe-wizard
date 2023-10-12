@@ -28,7 +28,7 @@ public partial class itemDetails : ContentPage
 
     async void deleteBtnClicked(System.Object sender, System.EventArgs e)
     {
-		// if deletes item and goes back a page
+		// deletes item and goes back a page
 		await clothingItemRepository.RemoveItemAsync(id);
 		await Navigation.PopAsync();
     }
