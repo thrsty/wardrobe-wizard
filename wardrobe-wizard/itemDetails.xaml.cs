@@ -1,4 +1,5 @@
 ﻿using wardrobe_wizard.Models;
+using wardrobe_wizard.Data;
 
 namespace wardrobe_wizard;
 
@@ -28,7 +29,7 @@ public partial class itemDetails : ContentPage
     async void deleteBtnClicked(System.Object sender, System.EventArgs e)
     {
 		// if deletes item and goes back a page
-		await App.ClothingItemRepo.RemoveItemAsync(id);
+		await clothingItemRepository.RemoveItemAsync(id);
 		await Navigation.PopAsync();
     }
 }

@@ -3,36 +3,47 @@ using wardrobe_wizard.Models;
 
 namespace wardrobe_wizard.Data
 {
-	public class clothingItemRepository
-	{
-        private readonly SQLiteAsyncConnection _database;
+    public class clothingItemRepository
+    {
+        public static SQLiteAsyncConnection clothingDb;
 
-		// initialise the database
-        public clothingItemRepository(string dbPath)
-		{
-			_database = new SQLiteAsyncConnection(dbPath);
-			_database.CreateTableAsync<clothingItem>();
-            Console.WriteLine("made sqliteAsyncConnection");
+        public clothingItemRepository()
+        {
         }
 
-		// returns all clothingItems in the database
-		public Task<List<clothingItem>> GetItemsAsync()
-		{
-			Console.WriteLine("getting items");
-            return _database.Table<clothingItem>().ToListAsync();
-		}
+        // initialise the database
+        async static Task init()
+        {
+            if (clothingDb is not null)
+                return;
 
-		// adds row to database with clothingItem fields
-		public Task<int> SaveItemAsync(clothingItem _clothingItem)
-		{
-			Console.WriteLine("saving item");
-			return _database.InsertAsync(_clothingItem);
-		}
+            clothingDb = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "clothingItems.db3"));
+            await clothingDb.CreateTableAsync<clothingItem>();
+            Console.WriteLine("made clothing database");
+        }
 
-		// deletes entry from clothes database
-		public Task RemoveItemAsync(int id)
-		{
-			return _database.DeleteAsync<clothingItem>(id);
-		}
-	}
+        // returns all clothingItems in the database
+        async static public Task<List<clothingItem>> GetItemsAsync()
+        {
+            await init();
+            Console.WriteLine("getting items");
+            return await clothingDb.Table<clothingItem>().ToListAsync();
+        }
+
+        // adds row to database with clothingItem fields
+        async static public Task<int> SaveItemAsync(clothingItem _clothingItem)
+        {
+            await init();
+            Console.WriteLine("saving item");
+            return await clothingDb.InsertAsync(_clothingItem);
+        }
+
+        // deletes entry from clothes database
+        async static public Task<int> RemoveItemAsync(int id)
+        {
+            await init();
+            Console.WriteLine("deleting item");
+            return await clothingDb.DeleteAsync<clothingItem>(id);
+        }
+    }
 }

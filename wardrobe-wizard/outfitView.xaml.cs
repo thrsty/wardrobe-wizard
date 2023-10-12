@@ -1,4 +1,5 @@
 ﻿using wardrobe_wizard.Models;
+using wardrobe_wizard.Data;
 
 namespace wardrobe_wizard;
 
@@ -13,7 +14,7 @@ public partial class outfitView : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        outfitCollectionView.ItemsSource = await App.OutfitRepo.GetItemsAsync();
+        outfitCollectionView.ItemsSource = await outfitRepository.GetOutfitsAsync();
     }
 
     // sends user to new navigation page

@@ -3,36 +3,47 @@ using wardrobe_wizard.Models;
 
 namespace wardrobe_wizard.Data
 {
-	public class outfitRepository
-	{
-        private readonly SQLiteAsyncConnection _database;
+    public class outfitRepository
+    {
+        public static SQLiteAsyncConnection outfitDb;
 
-		// initialise the database
-        public outfitRepository(string dbPath)
-		{
-			_database = new SQLiteAsyncConnection(dbPath);
-			_database.CreateTableAsync<outfitComponents>();
-            Console.WriteLine("made sqliteAsyncConnection to outfit database");
+        public outfitRepository()
+        {
         }
 
-		// returns all clothingItems in the database
-		public Task<List<outfitComponents>> GetItemsAsync()
-		{
-			Console.WriteLine("getting outfits");
-            return _database.Table<outfitComponents>().ToListAsync();
-		}
+        // initialise the database
+        async static Task init()
+        {
+            if (outfitDb != null)
+                return;
 
-		// adds row to database with clothingItem fields
-		public Task<int> SaveItemAsync(outfitComponents _outfitComponents)
-		{
-			Console.WriteLine("saving outfit");
-			return _database.InsertAsync(_outfitComponents);
-		}
+            outfitDb = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "savedOutfits.db3"));
+            await outfitDb.CreateTableAsync<outfitComponents>();
+            Console.WriteLine("made outfit database");
+        }
 
-		// deletes entry from clothes database
-		public Task RemoveItemAsync(int id)
-		{
-			return _database.DeleteAsync<outfitComponents>(id);
-		}
-	}
+        // returns all outfitComponents in the database
+        async static public Task<List<outfitComponents>> GetOutfitsAsync()
+        {
+            await init();
+            Console.WriteLine("getting outfits");
+            return await outfitDb.Table<outfitComponents>().ToListAsync();
+        }
+
+        // adds row to database with clothingItem fields
+        async static public Task<int> SaveOutfitAsync(outfitComponents _outfitComponents)
+        {
+            await init();
+            Console.WriteLine("saving outfit");
+            return await outfitDb.InsertAsync(_outfitComponents);
+        }
+
+        // deletes entry from clothes database
+        public static async Task<int> RemoveOutfitAsync(int id)
+        {
+            await init();
+            Console.WriteLine("deleting outfit");
+            return await outfitDb.DeleteAsync<outfitComponents>(id);
+        }
+    }
 }

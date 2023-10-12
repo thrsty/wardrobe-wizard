@@ -7,7 +7,7 @@ namespace wardrobe_wizard.Models
         // sqlite specific thing for unique ids
         [PrimaryKey, AutoIncrement]
 
-        // components of an outfit
+        // display items of an outfit
         public int id { get; set; }
         public string name { get; set; }
         public string image { get; set; }

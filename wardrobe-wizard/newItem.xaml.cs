@@ -1,4 +1,5 @@
 ﻿using wardrobe_wizard.Models;
+using wardrobe_wizard.Data;
 
 namespace wardrobe_wizard;
 
@@ -90,7 +91,7 @@ public partial class newItem : ContentPage
     async void DoneBtn_Clicked(System.Object sender, System.EventArgs e)
     {
         // add item to database and goes back to wardrobe view
-        await App.ClothingItemRepo.SaveItemAsync(new clothingItem
+        await clothingItemRepository.SaveItemAsync(new clothingItem
         {
             name = nameOfItem.Text,
             // need to implement colour picker

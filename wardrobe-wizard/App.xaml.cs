@@ -7,7 +7,7 @@ public partial class App : Application
 	// gets width of the screen in device's pixel measurements
 	public static readonly double fullscreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
 
-	// database setup for individual items
+	/* database setup for individual items
     private static clothingItemRepository clothingItemRepo;
 	public static clothingItemRepository ClothingItemRepo
 	{
@@ -47,7 +47,7 @@ public partial class App : Application
 
             return outfitRepo;
         }
-    }
+    } */
 
     public App()
 	{
