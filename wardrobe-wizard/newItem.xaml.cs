@@ -105,6 +105,13 @@ public partial class newItem : ContentPage
 
     async void DoneBtn_Clicked(System.Object sender, System.EventArgs e)
     {
+        // validation
+        if (string.IsNullOrEmpty(nameOfItem.Text) == true || string.IsNullOrEmpty(brandOfItem.Text) == true || string.IsNullOrEmpty(materialOfItem.Text) == true || string.IsNullOrEmpty(imagePath) == true)
+        {
+            Console.WriteLine("You need to fill in all of the fields, and take an image of the outfit");
+            return;
+        }
+        
         // add item to database and goes back to wardrobe view
         await clothingItemRepository.SaveItemAsync(new clothingItem
         {
