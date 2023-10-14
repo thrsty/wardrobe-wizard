@@ -35,12 +35,12 @@ public partial class NewOutfit : ContentPage
         }
     }
 
-    // adds outfit to the database, using the items list
-    async void doneBtnClicked(System.Object sender, System.EventArgs e)
+    // pushes photo page where the outfit is finalised
+    void photoNav_Clicked(System.Object sender, System.EventArgs e)
     {
         // validation
         int shirtSum = 0, pantsSum = 0, shoesSum = 0, jacketSum = 0, socksSum = 0, hatSum = 0;
-        
+
         foreach (clothingItem item in items)
         {
             // sorry
@@ -80,7 +80,7 @@ public partial class NewOutfit : ContentPage
         Console.WriteLine(shirtSum + " " + pantsSum + " " + shoesSum + " " + jacketSum + " " + socksSum + " " + hatSum);
 
         // if outfit does not have one shirt, pair of pants, pair of shoes or any other conditions here it will not add it the database.
-        if (shirtSum != 1 || pantsSum != 1|| shoesSum != 1 || jacketSum > 1 || socksSum > 1 || hatSum > 1 || nameOfFit.Text == null || nameOfFit.Text == string.Empty)
+        if (shirtSum != 1 || pantsSum != 1 || shoesSum != 1 || jacketSum > 1 || socksSum > 1 || hatSum > 1 || nameOfFit.Text == null || nameOfFit.Text == string.Empty)
         {
             Console.WriteLine("You cannot select more than one type of clothing per outfit.");
             Console.WriteLine("You also need a shirt, pair of pants, and pair of shoes per outfit");
@@ -88,19 +88,16 @@ public partial class NewOutfit : ContentPage
             return;
         }
 
-        // save outfit to outfit database
-        await outfitRepository.SaveOutfitAsync(new outfitComponents
+        // push outfit photo page with current outfit properties
+        Navigation.PushAsync(new outfitPhotoPage (new outfitComponents
         {
             name = nameOfFit.Text,
-            image = items[0].image,
             shirt = shirtID,
             pants = pantsID,
             shoes = shoesID,
             jacket = jacketID,
             socks = socksID,
             hat = hatID,
-        });
-
-        await Shell.Current.GoToAsync("//outfitView");
+        }));
     }
 }

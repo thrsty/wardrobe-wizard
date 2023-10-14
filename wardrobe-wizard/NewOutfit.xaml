@@ -49,17 +49,35 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <Editor
-                x:Name="nameOfFit"
-                Placeholder="Name of outfit"
-                HorizontalTextAlignment="Center"
-                PlaceholderColor="{StaticResource Secondary}"
-                HorizontalOptions="Fill"/>
+            <!-- bit where you add the name of your outfit, added two elements because alignment of
+            placeholder text in the editor element is straight shithouse it doesnt align at all -->
+            <Border
+                Stroke="Transparent"
+                Padding="12">
+                <VerticalStackLayout>
+                    <Label
+                        Text="Outfit Name"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        FontSize="Default"
+                        FontFamily="InterSemiBold"/>
+
+                    <Editor
+                        x:Name="nameOfFit"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="200"
+                        HeightRequest="30"
+                        FontSize="Default"/>
+                </VerticalStackLayout>
+            </Border>
 
             <Button
-                Text="Done"
-                x:Name="doneBtn"
-                Clicked="doneBtnClicked">
+                Text="Take photo"
+                x:Name="photoNav"
+                Clicked="photoNav_Clicked">
             </Button>
 
         </VerticalStackLayout>

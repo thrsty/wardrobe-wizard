@@ -7,12 +7,14 @@ namespace wardrobe_wizard;
 public partial class outfitDetails : ContentPage
 {
     int delID;
+    string imagePath;
 
     public outfitDetails(int id)
     {
         InitializeComponent();
 
         delID = id;
+        imagePath = outfitRepository.GetOutfitAsync(id).Result.image;
 
         // for each not null item of clothing in _outfitcomponents
         // add it to a list of type clothingItem objects and set that list
@@ -56,6 +58,9 @@ public partial class outfitDetails : ContentPage
     // deletes the outfit (shocker)
     async void DeleteBtn_Clicked(System.Object sender, System.EventArgs e)
     {
+        // need to delete image file form system for clothing item
+        File.Delete(imagePath);
+
         await outfitRepository.RemoveOutfitAsync(delID);
         await Navigation.PopAsync();
     }

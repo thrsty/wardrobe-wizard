@@ -7,181 +7,50 @@
     <!-- this means that we can scroll down the page-->
     <ScrollView>
 
-        <!-- display for each items attributes -->
+        <!-- display for each attributes of selected item -->
         <VerticalStackLayout Spacing="10" Margin="4, 10, 4, 10">
 
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Name" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
+            <Image
+                x:Name="itemImage"
+                MaximumWidthRequest="400"
+                MaximumHeightRequest="400"/>
 
-                        <Label x:Name="itemName" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
+            <CollectionView
+                x:Name="itemDetailsView"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout
+                            Spacing="6"
+                            Margin="6">
+                            <Label Text="{Binding nameOfProperty}" HorizontalTextAlignment="Center"/>
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                Padding="20"
+                                HorizontalOptions="Fill"
+                                WidthRequest="400">
 
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Color" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
+                                <Label Text="{Binding propertyValue}" HorizontalTextAlignment="Center"/>
+                            </Border>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                        <Label x:Name="itemColor" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Type" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemType" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Photo" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Image x:Name="itemImage" HorizontalOptions="Center" MaximumHeightRequest="256" MaximumWidthRequest="256"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Brand" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemBrand" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Fit" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemFit" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Material" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemMaterial" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Price" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemPrice" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Formality" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemFormality" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="Transparent"
-                BorderColor="Transparent">
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Is it clean?" HorizontalTextAlignment="Center"/>
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Padding="10"
-                        HorizontalOptions="Fill">
-
-                        <Label x:Name="itemClean" HorizontalTextAlignment="Center"/>
-                    </Border>
-                </VerticalStackLayout>
-            </Frame>
+            <Border
+                MaximumHeightRequest="4"
+                MaximumWidthRequest="440"
+                Stroke="{StaticResource Secondary}"/>
 
             <Button
                 x:Name="deleteBtn"
+                Margin = "0, 16, 0, 20"
+                Padding="20"
+                MaximumWidthRequest="400"
+                FontSize="Subtitle"
+                FontFamily="InterSemiBold"
                 Text="Delete"
                 Clicked="deleteBtnClicked"/>
         </VerticalStackLayout>

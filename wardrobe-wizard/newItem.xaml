@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="wardrobe_wizard.newItem"
              Title="New Item">
 
@@ -13,11 +12,18 @@
             Spacing="10"
             Margin="6, 0, 6, 0">
 
+            <!-- that's a lot of elements :O -->
             <Editor
                 x:Name="nameOfItem"
                 Placeholder="Name"
                 HorizontalTextAlignment="Center"
                 PlaceholderColor="{StaticResource Secondary}"
+                HorizontalOptions="Fill"/>
+
+            <Picker
+                x:Name="colorPicker"
+                Title="Color"
+                HorizontalTextAlignment="Center"
                 HorizontalOptions="Fill"/>
 
             <Picker
@@ -37,24 +43,6 @@
                 Title="Fit"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Fill"/>
-
-            <Button
-                x:Name="openCameraBtn"
-                Text="Open camera"
-                Clicked="openCameraBtn_Clicked"/>
-
-            <cv:CameraView
-                x:Name="cameraView"
-                WidthRequest="0"
-                HeightRequest="0"
-                CamerasLoaded="cameraView_CamerasLoaded"/>
-
-            <Button
-                x:Name="takePhoto"
-                Clicked="takePhoto_Clicked"
-                Text="Take photo!"
-                MaximumHeightRequest="0"
-                MaximumWidthRequest="0"/>
         
             <Editor
                 x:Name="materialOfItem"
@@ -75,10 +63,10 @@
                 HorizontalOptions="Fill"/>
 
             <Button
-                x:Name="DoneBtn"
-                Text="Done"
-                Clicked="DoneBtn_Clicked"
-                HorizontalOptions="Fill"/>
+                x:Name="photoNavBtn"
+                Text="Take a photo!"
+                Clicked="photoNavBtn_Clicked"
+                HorizontalOptions="CenterAndExpand"/>
 
         </VerticalStackLayout>
     </ScrollView>
