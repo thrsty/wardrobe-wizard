@@ -2,14 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wardrobe_wizard="clr-namespace:wardrobe_wizard"
-             x:DataType="wardrobe_wizard:MainPage"
              x:Class="wardrobe_wizard.MainPage"
              Title="Home">
 
     <!-- first page user sees, acts as a home page with typical dashboard info-->
 
     <ScrollView>
-
         <VerticalStackLayout
             Spacing="20"
             Padding="20, 20"
@@ -17,161 +15,112 @@
             HorizontalOptions="Start">
 
              <Label
-                Text="Good Morning!"
+                x:Name="greetingLabel"
                 FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 Padding="5"
                 HorizontalOptions="Start" />
 
-            <HorizontalStackLayout
-                Spacing="20"
-                HorizontalOptions="Start">
-
-                <Border
-                    Padding="6"
-                    Background="{StaticResource Primary}"
-                    StrokeShape="RoundRectangle 8"
-                    HeightRequest="70"
-                    WidthRequest="70"
-                    StrokeThickness="0">
-
-                    <Image
-                        Source="cloud.png"
-                        MaximumWidthRequest="50"
-                        MaximumHeightRequest="50"/>
-
-                </Border>
-
-                <Label
-                Text="temp° and condition"
-                FontAttributes="Bold"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="current weather state"
-                FontSize="18"
-                VerticalOptions="Center" />
-
-            </HorizontalStackLayout>
-
             <Button
                 x:Name="NewFitBtn"
-                Text="New fit"
+                Text="New outfit"
                 FontFamily="InterSemiBold"
                 FontSize="32"
                 Clicked="OnNewFitClicked"
                 HorizontalOptions="Center"
-                HeightRequest="80"
+                HeightRequest="120"
                 />
 
-            <!-- the suggested outfits -->
-            <VerticalStackLayout
-                Spacing="10"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
+            <CollectionView
+                x:Name="itemsView"
+                ItemsLayout="HorizontalGrid, 2"
+                SelectionMode="Single"
+                EmptyView="No clothes yet!"
+                SelectionChanged="itemsView_SelectionChanged"
+                Margin="8"
+                MaximumHeightRequest="700">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="12" Margin="8">
+                            <Border
+                                BackgroundColor="Transparent"
+                                StrokeThickness="8"
+                                Stroke="{StaticResource Secondary}"
+                                MaximumHeightRequest="250"
+                                MaximumWidthRequest="250">
 
-                <Label
-                Text="Suggested outfits:"
-                FontFamily="InterSemiBold"
-                FontSize="20"
-                HorizontalTextAlignment="Start" />
+                                <Image
+                                    Source="{Binding image}"
+                                    MaximumHeightRequest="250"
+                                    MaximumWidthRequest="250"
+                                    Margin="-4"/>
+                            </Border>
 
-                <Border
-                    x:Name="Border1"
-                    Background="{StaticResource Primary}"
-                    HeightRequest="60"
-                    StrokeShape="RoundRectangle 8"
-                    StrokeThickness="0"
-                    Padding="4">
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                Margin="5, 0, 5, 6"
+                                Padding="8"
+                                WidthRequest="250">
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding type}" HorizontalOptions="Center" Padding="0, 8, 0, 2" FontFamily="Inter"/>
+                                    <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                        <Label
-                            Padding="12"
-                            Text="Name of fit 1"
-                            FontFamily="InterSemiBold"
-                            VerticalTextAlignment="Center"
-                            FontSize="16"
-                            HorizontalOptions="Start"
-                            />
+            <Border
+                Stroke="{StaticResource Secondary}"
+                x:Name="divider"
+                StrokeThickness="8"
+                MaximumHeightRequest="4"/>
 
-                        <Image
-                            Source="placeholderphoto.png"
-                            MaximumHeightRequest="52"
-                            MaximumWidthRequest="52"
-                            Grid.Column="1"/>
+            <CollectionView
+                x:Name="outfitView"
+                ItemsLayout="HorizontalGrid, 1"
+                SelectionMode="Single"
+                EmptyView="No outfits yet!"
+                SelectionChanged="outfitView_SelectionChanged">
 
-                    </Grid>
-                    
-                </Border>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="16" Margin="8">
+                            <Border
+                                BackgroundColor="Transparent"
+                                StrokeThickness="8"
+                                Stroke="{StaticResource Secondary}"
+                                MaximumHeightRequest="300"
+                                MaximumWidthRequest="300">
 
-                <Border
-                    x:Name="Border2"
-                    Background="{StaticResource Primary}"
-                    HeightRequest="60"
-                    StrokeShape="RoundRectangle 8"
-                    StrokeThickness="0"
-                    Padding="4">
-                    
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
+                                <Image
+                                    Source="{Binding image}"
+                                    MaximumHeightRequest="250"
+                                    MaximumWidthRequest="250"
+                                    Margin="-4"/>
+                            </Border>
 
-                        <Label
-                            Padding="12"
-                            Text="Name of fit 2"
-                            FontFamily="InterSemiBold"
-                            VerticalTextAlignment="Center"
-                            FontSize="16"
-                            HorizontalOptions="Start"
-                            />
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                Margin="5, 0, 5, 6"
+                                Padding="16"
+                                WidthRequest="250">
 
-                        <Image
-                            Source="placeholderphoto.png"
-                            MaximumHeightRequest="52"
-                            MaximumWidthRequest="52"
-                            Grid.Column="1"/>
-
-                    </Grid>
-
-                </Border>
-                    
-                <Border
-                    x:Name="Border3"
-                    Background="{StaticResource Primary}"
-                    HeightRequest="60"
-                    StrokeShape="RoundRectangle 8"
-                    StrokeThickness="0"
-                    Padding="4">
-                    
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label
-                            Padding="12"
-                            Text="Name of fit 3"
-                            FontFamily="InterSemiBold"
-                            VerticalTextAlignment="Center"
-                            FontSize="16"
-                            HorizontalOptions="Start"
-                            />
-
-                        <Image
-                            Source="placeholderphoto.png"
-                            MaximumHeightRequest="52"
-                            MaximumWidthRequest="52"
-                            Grid.Column="1"/>
-                    </Grid>
-                </Border>
-            </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding name}" HorizontalOptions="Center" FontSize="Medium" Padding="0, 2, 0, 8"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

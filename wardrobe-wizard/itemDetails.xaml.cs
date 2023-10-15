@@ -1,34 +1,47 @@
 ﻿using wardrobe_wizard.Models;
+using wardrobe_wizard.Data;
 
 namespace wardrobe_wizard;
 
 public partial class itemDetails : ContentPage
 {
-	public int id;
+    int id;
+    string imagePath;
 
-	public itemDetails(clothingItem _clothingItem)
-	{
-		InitializeComponent();
+    public itemDetails(clothingItem _clothingItem)
+    {
+        InitializeComponent();
 
-		id = _clothingItem.id;
+        id = _clothingItem.id;
 
-		// sets each elements text to the specific item's values
-		itemName.Text		= _clothingItem.name;
-		itemColor.Text		= _clothingItem.color;
-		itemType.Text		= _clothingItem.type;
-		itemImage.Source	= _clothingItem.image;
-		itemBrand.Text		= _clothingItem.brand;
-		itemFit.Text		= _clothingItem.fit;
-        itemMaterial.Text	= _clothingItem.material;
-        itemPrice.Text		= _clothingItem.price;
-		itemFormality.Text	= _clothingItem.formality;
-		itemClean.Text		= _clothingItem.isClean.ToString();
+        itemImage.Source = _clothingItem.image;
+        itemName.Text = _clothingItem.name;
+        imagePath = _clothingItem.image;
+
+        // makes a list of all of the properties so that they can be used in a collectionView rather than
+        // making a bunch of individual items
+        List<clothingItemProperty> itemProperties = new List<clothingItemProperty>
+        {
+            new clothingItemProperty("Color", _clothingItem.color),
+            new clothingItemProperty("Type", _clothingItem.type),
+            new clothingItemProperty("Brand", _clothingItem.brand),
+            new clothingItemProperty("Fit", _clothingItem.fit),
+            new clothingItemProperty("Material", _clothingItem.material),
+            new clothingItemProperty("Price", _clothingItem.price),
+            new clothingItemProperty("Formality", _clothingItem.formality),
+            new clothingItemProperty("Clean", _clothingItem.isClean.ToString())
+        };
+
+        itemDetailsView.ItemsSource = itemProperties;
     }
 
     async void deleteBtnClicked(System.Object sender, System.EventArgs e)
     {
-		// if deletes item and goes back a page
-		await App.ClothingItemRepo.RemoveItemAsync(id);
-		await Navigation.PopAsync();
+        // need to delete image file from system for clothing item
+        File.Delete(imagePath);
+
+        // deletes item and goes back a page
+        await clothingItemRepository.RemoveItemAsync(id);
+        await Navigation.PopAsync();
     }
 }

@@ -4,34 +4,39 @@ namespace wardrobe_wizard;
 
 public partial class App : Application
 {
-	// gets width of the screen in device's pixel measurements
-	public static readonly double fullscreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
+    // gets width of the screen in device's pixel measurements
+    public static readonly double fullscreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
 
-	// database setup
-    private static clothingItemRepository clothingItemRepo;
-	public static clothingItemRepository ClothingItemRepo
-	{
-		get
-		{
-			// if there is a database already, don't make one. otherwise make one
-			if (clothingItemRepo == null)
-			{
-                clothingItemRepo = new clothingItemRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "clothingItems.db3"));
-                Console.WriteLine("created database at " + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)));
-			}
-			else
-			{
-				Console.WriteLine("database already exists");
-			}
-
-			return clothingItemRepo;
-		}
-	}
-
-	public App()
-	{
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
 
         MainPage = new AppShell();
-	}
+
+        startDBs();
+    }
+
+    // starts the clothing database because the async lazy load doesn't work with the
+    // sync getItem task but task doesn't work if it's async so it's sync
+    async void startDBs()
+    {
+        await clothingItemRepository.init();
+    }
+
+    // used for unique names of clothing photos
+    public static string getImagePath(string type)
+    {
+        int count = 0;
+
+        // iterates image filename by one if a file with the same name exists
+        while (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), type + count.ToString() + ".png")) == true)
+        {
+            count++;
+        }
+
+        // double check on implementation
+        Console.WriteLine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), type + count.ToString() + ".png"));
+
+        return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), type + count.ToString() + ".png");
+    }
 }

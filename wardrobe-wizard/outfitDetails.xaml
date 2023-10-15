@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wardrobe_wizard.outfitDetails"
+             Title="Outfit Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="10">
+
+            <Label
+                x:Name="fitName"
+                FontSize="48"
+                HorizontalOptions="Center"
+                MaximumWidthRequest="400"/>
+
+            <CollectionView
+                x:Name="outfitClothesView"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="6">
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="Transparent"
+                                StrokeThickness="0"
+                                Margin="5, 4, 5, 0"
+                                MaximumHeightRequest="300"
+                                MaximumWidthRequest="300">
+
+                                <Image Source="{Binding image}"
+                                        MaximumHeightRequest="400"
+                                        MaximumWidthRequest="400"/>
+                            </Border>
+
+                            <Border
+                                StrokeShape="RoundRectangle 10"
+                                BackgroundColor="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                Padding="20"
+                                Margin="6"
+                                HorizontalOptions="Fill"
+                                WidthRequest="400">
+
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="{Binding type}" HorizontalOptions="Center" FontFamily="Inter"/>
+                                    <Label Text="{Binding name}" HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button
+                x:Name="DeleteBtn"
+                Padding="20"
+                Clicked="DeleteBtn_Clicked"
+                Text="Delete this outfit"
+                HorizontalOptions="Center"
+                FontSize="Title"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -89,9 +89,9 @@
     <Style TargetType="Editor">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource DarkBackground}, Dark={StaticResource Secondary}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="FontFamily" Value="Inter"/>
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="FontFamily" Value="InterSemiBold"/>
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Secondary}}" />
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -185,8 +185,8 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Secondary}}" />
         <Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="FontFamily" Value="Inter"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="InterSemiBold"/>
+        <Setter Property="FontSize" Value="Large"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
         <Setter Property="VisualStateManager.VisualStateGroups">

@@ -4,13 +4,49 @@
              x:Class="wardrobe_wizard.outfitView"
              Title="Outfits View">
 
-    <VerticalStackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add item" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
 
-        <Label 
-            Text="fits"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <!-- shows all of a uses items of clothing -->
+    <CollectionView
+        x:Name="outfitCollectionView"
+        ItemsLayout="VerticalGrid, 2"
+        SelectionMode="Single"
+        EmptyView="No outfits yet!"
+        SelectionChanged="outfitCollectionView_SelectionChanged">
 
-    </VerticalStackLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <VerticalStackLayout Spacing="16" Margin="8">
+                    <Border
+                        BackgroundColor="Transparent"
+                        StrokeThickness="8"
+                        Stroke="{StaticResource Secondary}"
+                        MaximumHeightRequest="300"
+                        MaximumWidthRequest="300">
 
+                        <Image
+                            Source="{Binding image}"
+                            MaximumHeightRequest="300"
+                            MaximumWidthRequest="300"
+                            Margin="-4"/>
+                    </Border>
+
+                    <Border
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="{StaticResource Primary}"
+                        StrokeThickness="0"
+                        Margin="5, 0, 5, 6"
+                        Padding="16"
+                        WidthRequest="400">
+
+                        <VerticalStackLayout>
+                            <Label Text="{Binding name}" HorizontalOptions="Center" FontSize="Medium" Padding="0, 2, 0, 8"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
