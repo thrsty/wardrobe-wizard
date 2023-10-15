@@ -13,12 +13,12 @@ public partial class App : Application
 
         MainPage = new AppShell();
 
-        startClothingDB();
+        startDBs();
     }
 
     // starts the clothing database because the async lazy load doesn't work with the
     // sync getItem task but task doesn't work if it's async so it's sync
-    async void startClothingDB()
+    async void startDBs()
     {
         await clothingItemRepository.init();
     }

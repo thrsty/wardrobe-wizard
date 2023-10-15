@@ -12,10 +12,12 @@
             Margin="20">
 
             <!-- that's a lot of elements :O -->
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0"
+                    BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Name" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
+                        BackgroundColor="Transparent"
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
                         StrokeShape="RoundRectangle 10">
@@ -32,13 +34,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Colour" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
-                        StrokeShape="RoundRectangle 10">
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="Transparent">
                         <Picker
                             x:Name="colorPicker"
                             HorizontalTextAlignment="Center"
@@ -50,10 +53,11 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Type" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
+                        BackgroundColor="Transparent"
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
                         StrokeShape="RoundRectangle 10">
@@ -67,13 +71,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Brand" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
-                        StrokeShape="RoundRectangle 10">
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="Transparent">
                         <Editor
                             x:Name="brandOfItem"
                             HorizontalTextAlignment="Center"
@@ -87,13 +92,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Fit" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
-                        StrokeShape="RoundRectangle 10">
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="Transparent">
                         <Picker
                             x:Name="fitPicker"
                             HorizontalTextAlignment="Center"
@@ -105,13 +111,14 @@
             </Border>
 
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Material" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
-                        StrokeShape="RoundRectangle 10">
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="Transparent">
                         <Editor
                             x:Name="materialOfItem"
                             HorizontalTextAlignment="Center"
@@ -125,13 +132,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Price" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
-                        StrokeShape="RoundRectangle 10">
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="Transparent">
                         <Picker
                             x:Name="pricePicker"
                             HorizontalTextAlignment="Center"
@@ -142,13 +150,14 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="0">
+            <Border StrokeThickness="0" BackgroundColor="Transparent">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Formality" FontSize="Subtitle" HorizontalOptions="Center"/>
                     <Border
                         Stroke="{StaticResource Secondary}"
                         StrokeThickness="4"
-                        StrokeShape="RoundRectangle 10">
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="Transparent">
                         <Picker
                             x:Name="formalityPicker"
                             HorizontalTextAlignment="Center"

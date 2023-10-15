@@ -37,7 +37,7 @@ public partial class itemDetails : ContentPage
 
     async void deleteBtnClicked(System.Object sender, System.EventArgs e)
     {
-        // need to delete image file form system for clothing item
+        // need to delete image file from system for clothing item
         File.Delete(imagePath);
 
         // deletes item and goes back a page

@@ -21,14 +21,14 @@ public partial class newItem : ContentPage
     void photoNavBtn_Clicked(System.Object sender, System.EventArgs e)
     {
         // validation
-        if (string.IsNullOrEmpty(nameOfItem.Text) == true ||
-            string.IsNullOrEmpty(colorPicker.SelectedItem.ToString()) == true ||
-            string.IsNullOrEmpty(typePicker.SelectedItem.ToString()) == true ||
-            string.IsNullOrEmpty(brandOfItem.Text) == true ||
-            string.IsNullOrEmpty(fitPicker.SelectedItem.ToString()) == true ||
-            string.IsNullOrEmpty(materialOfItem.Text) == true ||
-            string.IsNullOrEmpty(pricePicker.SelectedItem.ToString()) == true ||
-            string.IsNullOrEmpty(formalityPicker.SelectedItem.ToString()) == true)
+        if (string.IsNullOrWhiteSpace(nameOfItem.Text) == true ||
+            string.IsNullOrWhiteSpace(colorPicker.SelectedItem.ToString()) == true ||
+            string.IsNullOrWhiteSpace(typePicker.SelectedItem.ToString()) == true ||
+            string.IsNullOrWhiteSpace(brandOfItem.Text) == true ||
+            string.IsNullOrWhiteSpace(fitPicker.SelectedItem.ToString()) == true ||
+            string.IsNullOrWhiteSpace(materialOfItem.Text) == true ||
+            string.IsNullOrWhiteSpace(pricePicker.SelectedItem.ToString()) == true ||
+            string.IsNullOrWhiteSpace(formalityPicker.SelectedItem.ToString()) == true)
         {
             Console.WriteLine("You need to fill in all of the fields");
             return;

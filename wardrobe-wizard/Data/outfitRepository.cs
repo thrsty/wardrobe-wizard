@@ -13,7 +13,7 @@ namespace wardrobe_wizard.Data
         }
 
         // initialise the outfit database
-        async static Task init()
+        async static public Task init()
         {
             if (outfitDb != null)
                 return;

@@ -26,8 +26,6 @@ public partial class wardrobeView : ContentPage
     // when an item of clothing is selected, show the item's details page
     void wardrobeCollectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
-        clothingItem item = (clothingItem)wardrobeCollectionView.SelectedItem;
-        Console.WriteLine(item.name);
         Navigation.PushAsync(new itemDetails((clothingItem)wardrobeCollectionView.SelectedItem));
     }
 }
