@@ -88,10 +88,13 @@ public partial class NewOutfit : ContentPage
             return;
         }
 
+        string fitName = nameOfFit.Text;
+        nameOfFit.Text = null;
+
         // push outfit photo page with current outfit properties
         Navigation.PushAsync(new outfitPhotoPage (new outfitComponents
         {
-            name = nameOfFit.Text,
+            name = fitName,
             shirt = shirtID,
             pants = pantsID,
             shoes = shoesID,

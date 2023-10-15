@@ -15,6 +15,7 @@ public partial class outfitDetails : ContentPage
 
         delID = id;
         imagePath = outfitRepository.GetOutfitAsync(id).Result.image;
+        fitName.Text = outfitRepository.GetOutfitAsync(id).Result.name;
 
         // for each not null item of clothing in _outfitcomponents
         // add it to a list of type clothingItem objects and set that list

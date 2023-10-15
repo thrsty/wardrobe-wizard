@@ -8,44 +8,49 @@
         <ToolbarItem Text="Add item" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
-    <!-- shows all of a uses items of clothing -->
-    <CollectionView
-        x:Name="wardrobeCollectionView"
-        ItemsLayout="VerticalGrid, 2"
-        SelectionMode="Single"
-        EmptyView="No clothes yet!"
-        SelectionChanged="wardrobeCollectionView_SelectionChanged">
+    <ScrollView>
+        <!-- shows all of a user's items of clothing -->
+        <CollectionView
+            x:Name="wardrobeCollectionView"
+            ItemsLayout="VerticalGrid, 2"
+            SelectionMode="Single"
+            EmptyView="No clothes yet!"
+            SelectionChanged="wardrobeCollectionView_SelectionChanged"
+            Margin="8">
 
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <VerticalStackLayout Spacing="7">
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Margin="5, 4, 5, 0"
-                        MaximumHeightRequest="256"
-                        MaximumWidthRequest="256">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Spacing="16" Margin="8">
+                        <Border
+                            BackgroundColor="Transparent"
+                            StrokeThickness="8"
+                            Stroke="{StaticResource Secondary}"
+                            MaximumHeightRequest="300"
+                            MaximumWidthRequest="300">
 
-                        <Image Source="{Binding image}"
-                                MaximumHeightRequest="250"
-                                MaximumWidthRequest="250"/>
-                    </Border>
+                            <Image
+                                Source="{Binding image}"
+                                MaximumHeightRequest="300"
+                                MaximumWidthRequest="300"
+                                Margin="-4"/>
+                        </Border>
 
-                    <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Margin="5, 0, 5, 6"
-                        Padding="8">
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            BackgroundColor="{StaticResource Primary}"
+                            StrokeThickness="0"
+                            Margin="5, 0, 5, 6"
+                            Padding="8"
+                            WidthRequest="400">
 
-                        <VerticalStackLayout>
-                            <Label Text="{Binding type}" HorizontalOptions="Center" Padding="0, 8, 0, 2" FontFamily="Inter"/>
-                            <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
-                        </VerticalStackLayout>
-                    </Border>
-                </VerticalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding type}" HorizontalOptions="Center" Padding="0, 8, 0, 2" FontFamily="Inter"/>
+                                <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
+                            </VerticalStackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
 </ContentPage>

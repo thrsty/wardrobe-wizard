@@ -15,14 +15,13 @@ public partial class itemDetails : ContentPage
         id = _clothingItem.id;
 
         itemImage.Source = _clothingItem.image;
+        itemName.Text = _clothingItem.name;
         imagePath = _clothingItem.image;
-
 
         // makes a list of all of the properties so that they can be used in a collectionView rather than
         // making a bunch of individual items
         List<clothingItemProperty> itemProperties = new List<clothingItemProperty>
         {
-            new clothingItemProperty("Name", _clothingItem.name),
             new clothingItemProperty("Color", _clothingItem.color),
             new clothingItemProperty("Type", _clothingItem.type),
             new clothingItemProperty("Brand", _clothingItem.brand),

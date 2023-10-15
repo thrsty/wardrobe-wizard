@@ -4,39 +4,46 @@
              x:Class="wardrobe_wizard.outfitDetails"
              Title="Outfit Details">
 
-    <!-- page that you see when clicking on an outfit
-         it looks really ugly -->
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Padding="16" Spacing="10">
+
+            <Label
+                x:Name="fitName"
+                FontSize="48"
+                HorizontalOptions="Center"
+                MaximumWidthRequest="400"/>
+
             <CollectionView
                 x:Name="outfitClothesView"
                 SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Spacing="7">
+                        <VerticalStackLayout Spacing="6">
                             <Border
                                 StrokeShape="RoundRectangle 10"
-                                BackgroundColor="{StaticResource Primary}"
+                                BackgroundColor="Transparent"
                                 StrokeThickness="0"
                                 Margin="5, 4, 5, 0"
-                                MaximumHeightRequest="256"
-                                MaximumWidthRequest="256">
+                                MaximumHeightRequest="300"
+                                MaximumWidthRequest="300">
 
                                 <Image Source="{Binding image}"
-                                        MaximumHeightRequest="250"
-                                        MaximumWidthRequest="250"/>
+                                        MaximumHeightRequest="400"
+                                        MaximumWidthRequest="400"/>
                             </Border>
 
                             <Border
                                 StrokeShape="RoundRectangle 10"
                                 BackgroundColor="{StaticResource Primary}"
                                 StrokeThickness="0"
-                                Margin="5, 0, 5, 6"
-                                Padding="8">
+                                Padding="20"
+                                Margin="6"
+                                HorizontalOptions="Fill"
+                                WidthRequest="400">
 
-                                <VerticalStackLayout>
-                                    <Label Text="{Binding type}" HorizontalOptions="Center" Padding="0, 8, 0, 2" FontFamily="Inter"/>
-                                    <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
+                                <VerticalStackLayout Spacing="2">
+                                    <Label Text="{Binding type}" HorizontalOptions="Center" FontFamily="Inter"/>
+                                    <Label Text="{Binding name}" HorizontalOptions="Center"/>
                                 </VerticalStackLayout>
                             </Border>
                         </VerticalStackLayout>
@@ -46,8 +53,11 @@
 
             <Button
                 x:Name="DeleteBtn"
+                Padding="20"
                 Clicked="DeleteBtn_Clicked"
-                Text="Delete this outfit"/>
+                Text="Delete this outfit"
+                HorizontalOptions="Center"
+                FontSize="Title"/>
 
         </VerticalStackLayout>
     </ScrollView>

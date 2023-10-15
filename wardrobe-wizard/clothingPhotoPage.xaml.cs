@@ -6,7 +6,6 @@ namespace wardrobe_wizard;
 public partial class clothingPhotoPage : ContentPage
 {
     public string imagePath;
-    double fitPicFileName = 0;
     public clothingItem itemToAdd;
 
     public clothingPhotoPage(clothingItem _clothingItem)

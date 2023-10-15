@@ -18,18 +18,19 @@
 
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout Spacing="7">
+                <VerticalStackLayout Spacing="16" Margin="8">
                     <Border
-                        StrokeShape="RoundRectangle 10"
-                        BackgroundColor="{StaticResource Primary}"
-                        StrokeThickness="0"
-                        Margin="5, 4, 5, 0"
-                        MaximumHeightRequest="256"
-                        MaximumWidthRequest="256">
+                        BackgroundColor="Transparent"
+                        StrokeThickness="8"
+                        Stroke="{StaticResource Secondary}"
+                        MaximumHeightRequest="300"
+                        MaximumWidthRequest="300">
 
-                        <Image Source="{Binding image}"
-                                MaximumHeightRequest="250"
-                                MaximumWidthRequest="250"/>
+                        <Image
+                            Source="{Binding image}"
+                            MaximumHeightRequest="300"
+                            MaximumWidthRequest="300"
+                            Margin="-4"/>
                     </Border>
 
                     <Border
@@ -37,10 +38,12 @@
                         BackgroundColor="{StaticResource Primary}"
                         StrokeThickness="0"
                         Margin="5, 0, 5, 6"
-                        Padding="8">
+                        Padding="16"
+                        WidthRequest="400">
 
-                        <Label Text="{Binding name}" HorizontalOptions="Center" Padding="0, 2, 0, 8"/>
-
+                        <VerticalStackLayout>
+                            <Label Text="{Binding name}" HorizontalOptions="Center" FontSize="Medium" Padding="0, 2, 0, 8"/>
+                        </VerticalStackLayout>
                     </Border>
                 </VerticalStackLayout>
             </DataTemplate>
